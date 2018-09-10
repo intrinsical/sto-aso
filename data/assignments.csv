@@ -1,0 +1,222 @@
+Assignment,Rarity,Eng,Tac,Sci,Hours,Minutes
+Analyze Newly Discovered Phenomenon,Uncommon,45,45,105,3,30
+Assist Warbird Damaged by Pirates,Rare,95,65,65,0,45
+Attempt to Dampen Unknown Signal,VeryRare,90,90,160,3,0
+Attempt to Disperse Dangerous Phenomenon,Rare,70,70,125,3,0
+Break Pirate Blockade,Common,20,45,20,1,30
+Calibrate Automated Perimeter Defense,Common,15,25,15,0,30
+Calibrate Defense Perimeter,Common,15,25,15,0,30
+Capture Escaped Tal Shiar Agent,VeryRare,95,160,95,3,30
+Capture Violent Escaped Criminal,VeryRare,95,160,95,3,30
+Check Status of Isolated Colony,Common,15,15,15,0,30
+Check Status of Isolated Forward Base,Common,80,80,80,2,0
+Check Status of Isolated Research Station,Rare,80,80,80,2,0
+Check Status of Isolated Surveillance Station,Rare,80,80,80,2,0
+Clean Up Derelict Mine Field,Rare,125,80,80,4,0
+Clear Stellar Debris for Starbase Construction,Rare,120,70,70,2,30
+Coerce Diplomats with Show of Force,VeryRare,80,130,80,0,15
+Collect Rare Resources at Diplomatic Exchange,Rare,75,75,75,0,30
+Collect Tribute,Rare,75,75,75,0,30
+Conduct Salvage Operations,Uncommon,60,30,30,0,15
+Conduct Shipping Regulation Enforcement Patrols,VeryRare,145,85,85,2,0
+Defend Supply Lines for Medical Emergency,Common,15,15,35,0,45
+Defend Supply Lines for Medical Station,Common,15,15,35,0,45
+Deliver Sensor Readings to Research Post,Common,10,10,20,0,15
+Demolish Illegal Blockade,Common,20,45,20,1,30
+Demolish Pirate Blockade,Common,20,45,20,1,30
+Destroy Aggressive Defense Installations,VeryRare,190,95,95,4,0
+Destroy Imperial Romulan Mine Field,VeryRare,190,95,95,4,0
+Discourage Syndicate Raids in Ferengi Space,VeryRare,80,130,80,0,15
+Disintegrate Derelict Klingon Vessels,Rare,95,65,65,0,45
+Dismantle Illegal Mine Field,VeryRare,190,95,95,4,0
+Dismantle Mines Surrounding Neutral World,Rare,125,80,80,4,0
+Dismantle Unnecessary Mine Nets,Rare,125,80,80,4,0
+Dispatch First Response Team to Medical Emergency,Uncommon,30,30,80,0,30
+Disperse Hostile Blockade by Alien Intruders,VeryRare,85,145,85,1,30
+Divert Attention of Hostile Spaceborne Entity,VeryRare,85,85,150,2,30
+Divert Comet Approaching Trade-Partner’s Planet,Common,55,20,20,2,30
+Divert Comet from Inhabited Planet,Common,55,20,20,2,30
+Divert Comet from Republic Planet,Common,55,20,20,2,30
+Divert Comet from Resource-Rich Planet,Common,55,20,20,2,30
+Divert Mining Asteroid to Stable Orbit,VeryRare,175,90,90,4,0
+Divert Rogue Planet from Inhabited System,VeryRare,175,90,90,4,0
+Drive Off or Destroy Spaceborne Entity,VeryRare,85,85,150,2,30
+Ensure Return of Salvaged Weaponry,VeryRare,130,80,80,0,30
+Ensure Return of Stolen Resources,VeryRare,130,80,80,0,30
+Escort Captured Operative to Prisoner Exchange,Rare,70,110,70,2,0
+Escort Colonial Convoy through Federation Space,Common,45,45,45,4,0
+Escort Colonial Convoy through Ferengi Trade Alliance Space,Common,45,45,45,4,0
+Escort Colonial Convoy through Klingon Space,Common,45,45,45,4,0
+Escort Colonial Convoy through Pirate Territory,Rare,85,85,85,3,0
+Escort Colonial Convoy through Republic Space,Common,45,45,45,4,0
+Escort Colonial Convoy through Uncharted Space,Rare,85,85,85,3,0
+Escort Diplomatic Envoy Through Trade Alliance Space,VeryRare,105,105,105,2,0
+Escort Ferengi Trade Ships for Repairs,Common,20,10,10,0,15
+Escort High-Security Prisoner Transport,Rare,70,110,70,2,0
+Escort Prisoner Convoy to New Facility,Uncommon,40,80,40,1,0
+Establish Blockade of Enemy Supply Lines,Uncommon,90,40,40,1,30
+Establish Blockade of Pirate Territory,Uncommon,90,40,40,1,30
+Establish Blockade of Suspected Black-Market Supply Lines,Common,65,25,25,3,30
+Establish Blockade of Suspected Enemy Supply Lines,Common,65,25,25,3,30
+Establish Blockade of Suspected Star Empire Supporters,Common,65,25,25,3,30
+Establish Blockade of Syndicate Supply Line,Uncommon,90,40,40,1,30
+Establish Defensive Perimeter at Repair Facility,Rare,120,70,70,2,30
+Establish Defensive Perimeter at Salvage Facility,Rare,120,70,70,2,30
+Establish Trade Blockade on Un-Allied Planet,Uncommon,90,40,40,1,30
+Evacuate Refugees from Attacked Colony,VeryRare,110,110,110,3,0
+Evacuate Refugees from Collapsing Ferengi Colony,VeryRare,110,110,110,3,0
+Evacuate Refugees from Destroyed Colony,VeryRare,110,110,110,3,0
+Evacuate Refugees from Failing Colony,Uncommon,70,70,70,4,0
+Expose Agents of Empress Sela,Rare,75,75,75,0,30
+Ferengi Alliance - Tour of Duty (1 of 10),Epic,10,10,10,20,0
+Ferengi Alliance - Tour of Duty (10 of 10),Epic,100,100,100,20,0
+Ferengi Alliance - Tour of Duty (2 of 10),Epic,20,20,20,20,0
+Ferengi Alliance - Tour of Duty (3 of 10),Epic,30,30,30,20,0
+Ferengi Alliance - Tour of Duty (4 of 10),Epic,40,40,40,20,0
+Ferengi Alliance - Tour of Duty (5 of 10),Epic,50,50,50,20,0
+Ferengi Alliance - Tour of Duty (6 of 10),Epic,60,60,60,20,0
+Ferengi Alliance - Tour of Duty (7 of 10),Epic,70,70,70,20,0
+Ferengi Alliance - Tour of Duty (8 of 10),Epic,80,80,80,20,0
+Ferengi Alliance - Tour of Duty (9 of 10),Epic,90,90,90,20,0
+Ferry Starbase Crewmen to Shore Leave,Common,25,25,25,1,0
+Field Test New Singularity Drive,VeryRare,80,80,130,0,30
+Gather Sensor Readings on Unexplored Colonial Region,Rare,50,50,110,1,30
+Gather Sensor Readings on Unexplored Expansion Region,Rare,50,50,110,1,30
+Host a Reunification Summit,VeryRare,105,105,105,2,0
+Inspect Planetary Transporter Grids,Common,45,15,15,0,45
+Investigate Disappearance of Diplomatic Vessel,Uncommon,40,40,95,2,0
+Investigate Encoded Sensor Readings,Uncommon,25,25,70,0,15
+Investigate Federation Distress Signal,Common,35,35,35,2,0
+Investigate Ferengi Distress Signal,Common,35,35,35,2,0
+Investigate Klingon Distress Signal,Common,35,35,35,2,0
+Investigate Last Known Location of Lost Ship,Common,20,20,45,1,0
+Investigate Last Known Location of Lost Traders,Common,20,20,45,1,0
+Investigate Last Known Location of Lost Warriors,Common,20,20,45,1,0
+Investigate Lost Ship of Diplomatic Ambassadors,Uncommon,40,40,95,2,0
+Investigate Mysterious Loss of Commerce Authority Delegate,Uncommon,40,40,95,2,0
+Investigate Mysterious Loss of High Council Delegate,VeryRare,40,40,95,2,0
+Investigate Potential Location of Lost Archive,Common,20,20,45,1,0
+Investigate Republic Distress Signal,Common,35,35,35,2,0
+Investigate Stable Astronomical Phenomenon,Common,20,20,55,1,30
+Investigate Unknown Distress Signal,Rare,85,85,85,3,30
+Join Envoy Escorting Foreign Troops through Empire Territory,VeryRare,105,105,105,2,0
+Klingon Empire - Tour of Duty (1 of 10),Epic,10,10,10,20,0
+Klingon Empire - Tour of Duty (10 of 10),Epic,100,100,100,20,0
+Klingon Empire - Tour of Duty (2 of 10),Epic,20,20,20,20,0
+Klingon Empire - Tour of Duty (3 of 10),Epic,30,30,30,20,0
+Klingon Empire - Tour of Duty (4 of 10),Epic,40,40,40,20,0
+Klingon Empire - Tour of Duty (5 of 10),Epic,50,50,50,20,0
+Klingon Empire - Tour of Duty (6 of 10),Epic,60,60,60,20,0
+Klingon Empire - Tour of Duty (7 of 10),Epic,70,70,70,20,0
+Klingon Empire - Tour of Duty (8 of 10),Epic,80,80,80,20,0
+Klingon Empire - Tour of Duty (9 of 10),Epic,90,90,90,20,0
+Knock Asteroid into Stable Orbit,VeryRare,175,90,90,4,0
+Map Interior of Unexplored Nebula,Common,10,10,20,0,15
+Map Unexplored Alien Territory,Uncommon,25,25,70,0,15
+Map Unexplored Expansion Region,Rare,50,50,110,1,30
+Negotiate for Return of Salvage,VeryRare,130,80,80,0,30
+Observe Devastating Weapon Test,VeryRare,80,80,130,0,30
+Observe Planetary Disaster in Progress,VeryRare,80,80,130,0,30
+Obtain Sensor Readings from Nebula,Common,10,10,20,0,15
+Obtain Updated Sensor Readings on Nearby Nebula,Common,10,10,20,0,15
+Orbital Cleanse of Medical Emergency Site,Uncommon,30,30,80,0,30
+Participate in Prototype Combat Drills,Common,10,20,10,0,30
+Participate in Salvage Operations,Uncommon,60,30,30,0,15
+Patrol Borders,Rare,75,75,75,1,0
+Patrol Core Systems,Common,10,10,10,0,15
+Patrol Core Territory,Common,10,10,10,0,15
+Patrol Distant Colonies,Uncommon,50,50,50,0,45
+Patrol Distant Colonies and Vassals,Uncommon,50,50,50,0,45
+Patrol Edges of Claimed Space,Rare,75,75,75,1,0
+Patrol New Romulus System,Common,10,10,10,0,15
+Patrol Newly Established Colonies,VeryRare,100,100,100,0,45
+Patrol Outlying Colonies,Uncommon,50,50,50,0,45
+Patrol Republic Border,Uncommon,50,50,50,0,45
+Patrol Republic Space,Rare,75,75,75,1,0
+Patrol Unexplored Regions,VeryRare,100,100,100,0,45
+Patrol Unexplored Space,VeryRare,100,100,100,0,45
+Perform Diplomatic Parade,Rare,75,75,75,0,30
+Protect Allied Diplomats Marked for Assassination,VeryRare,85,145,85,1,30
+Protect Republic Officials Marked for Assassination,Common,20,45,20,1,30
+Provide Additional Security for Reunification Summit,Uncommon,60,60,60,3,0
+Provide Assistance to Damaged Alien Vessels,Rare,95,65,65,0,45
+Provide Diplomatic Show of Force,VeryRare,80,130,80,0,15
+Provide Escort for Vacationing Ferengi Merchants,Common,25,25,25,1,0
+Provide Honor Escort for Warriors on Leave,Common,25,25,25,1,0
+Provide Medical Assistance to Colony,Uncommon,30,30,80,0,30
+Provide Opposition for Cloaking Detection Drills,Rare,60,85,60,0,15
+Provide Opposition for Counter-Cloaking Drills,Rare,60,85,60,0,15
+Provide Opposition for Strike Team Drills,Rare,60,85,60,0,15
+Provide Quarantine Enforcement Patrols,VeryRare,145,85,85,2,0
+Provide Reinforcements for Counter-offensive,Rare,65,100,65,1,0
+Provide Reinforcements for Deep Strike,Rare,65,100,65,1,0
+Provide Reinforcements for Secure New Colony,Rare,65,100,65,1,0
+Provide Reinforcements in Hostile Sector,Uncommon,30,60,30,0,15
+Provide Reinforcements to Combat Zone,Uncommon,30,60,30,0,15
+Provide Reinforcements to Secure New Colony,Rare,65,100,65,1,0
+Pursue Escaping Interplanetary Criminal,Uncommon,45,85,45,2,30
+Pursue Escaping Tal Shiar Agent,Uncommon,45,85,45,2,30
+Quarantine Colony After Biological Attack,VeryRare,145,85,85,2,0
+Recover Stolen Cloaking Schematics,Common,25,25,25,1,0
+Reinforce Envoy of Decorated General on Diplomatic Mission,Uncommon,60,60,60,3,0
+Reinforce Envoy of Prominent Trader on Diplomatic Mission,Uncommon,60,60,60,3,0
+Reinforce Trade Blockade on Federation Planet,Common,65,25,25,3,30
+Relocate Settlers Away from Spaceborne Entity,VeryRare,85,85,150,2,30
+Repair Colony Automated Defense System,Common,35,70,35,0,30
+Romulan Republic - Tour of Duty (1 of 10),Epic,10,10,10,20,0
+Romulan Republic - Tour of Duty (10 of 10),Epic,100,100,100,20,0
+Romulan Republic - Tour of Duty (2 of 10),Epic,20,20,20,20,0
+Romulan Republic - Tour of Duty (3 of 10),Epic,30,30,30,20,0
+Romulan Republic - Tour of Duty (4 of 10),Epic,40,40,40,20,0
+Romulan Republic - Tour of Duty (5 of 10),Epic,50,50,50,20,0
+Romulan Republic - Tour of Duty (6 of 10),Epic,60,60,60,20,0
+Romulan Republic - Tour of Duty (7 of 10),Epic,70,70,70,20,0
+Romulan Republic - Tour of Duty (8 of 10),Epic,80,80,80,20,0
+Romulan Republic - Tour of Duty (9 of 10),Epic,90,90,90,20,0
+Salvage Abandoned Tal Shiar Research Station,VeryRare,130,80,80,0,30
+Salvage Derelict Ferengi Vessels,Rare,95,65,65,0,45
+Salvage Unnecessary Mine Nets,Rare,125,80,80,4,0
+Set Up Orbital Transport Inhibitors at Quarantine Site,Common,45,15,15,0,45
+Set Up Quarantine Warning Buoys,Common,45,15,15,0,45
+Study Movements of Spaceborne Entity,Uncommon,35,35,90,1,0
+Supply Isolated Colony,Common,15,15,15,0,30
+Supply Isolated Forward Base,Rare,80,80,80,2,0
+Supply Run to Distant Federation Colony,Uncommon,55,55,55,1,30
+Supply Run to Distant Ferengi Outpost,Uncommon,55,55,55,1,30
+Supply Run to Distant Klingon Outpost,Uncommon,55,55,55,1,30
+Supply Run to Raiding Outpost,VeryRare,100,100,100,1,0
+Supply Run to Reman Settlement,VeryRare,100,100,100,1,0
+Supply Run to Remote Listening Post,VeryRare,100,100,100,1,0
+Supply Run to Resource Depot,VeryRare,100,100,100,1,0
+Supply Run to Romulan Colony,Uncommon,55,55,55,1,30
+Support Response to Medical Emergency,Common,15,15,35,0,45
+Suppress Star Empire Propaganda,VeryRare,80,130,80,0,15
+Test Prototype Automated Defenses,Uncommon,35,70,35,0,30
+Test Prototype Defense Perimeter,Uncommon,35,70,35,0,30
+Tow Damaged Federation Ships for Repairs,Common,20,10,10,0,15
+Tow Damaged Klingon Ships for Repairs,Common,20,10,10,0,15
+Tow Damaged Republic Ships for Repairs,Common,20,10,10,0,15
+Track Movements and Capabilities of Spaceborne Entity,Uncommon,35,35,90,1,0
+Track Movements of Spaceborne Entity,Uncommon,35,35,90,1,0
+Track Reman Separatist Movements,Common,25,25,60,3,0
+Track Tal Shiar Movements,VeryRare,90,90,160,3,0
+Transport Diplomatic Delegates,Uncommon,60,60,60,3,0
+Transport Foreign Delegates,VeryRare,105,105,105,2,0
+Transport Materials for Starbase Construction,Uncommon,80,35,35,0,45
+Transport Political Prisoner into Custody,Uncommon,40,80,40,1,0
+Transport Prisoners to Workforce Placement,Uncommon,40,80,40,1,0
+Transport Raw Materials to Repair Facility Site,Uncommon,80,35,35,0,45
+Transport Raw Materials to Salvage Facility Site,Uncommon,80,35,35,0,45
+Transport Refugees From Failing Ferengi Colony,Uncommon,70,70,70,4,0
+Uncover Source of Unknown Signal,Common,25,25,60,3,0
+United Federation of Planets - Tour of Duty (1 of 10),Epic,10,10,10,20,0
+United Federation of Planets - Tour of Duty (10 of 10),Epic,100,100,100,20,0
+United Federation of Planets - Tour of Duty (2 of 10),Epic,20,20,20,20,0
+United Federation of Planets - Tour of Duty (3 of 10),Epic,30,30,30,20,0
+United Federation of Planets - Tour of Duty (4 of 10),Epic,40,40,40,20,0
+United Federation of Planets - Tour of Duty (5 of 10),Epic,50,50,50,20,0
+United Federation of Planets - Tour of Duty (6 of 10),Epic,60,60,60,20,0
+United Federation of Planets - Tour of Duty (7 of 10),Epic,70,70,70,20,0
+United Federation of Planets - Tour of Duty (8 of 10),Epic,80,80,80,20,0
+United Federation of Planets - Tour of Duty (9 of 10),Epic,90,90,90,20,0
+Verify Sensor Readings from Remote Listening Post,Uncommon,25,25,70,0,15
