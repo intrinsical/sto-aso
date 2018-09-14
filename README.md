@@ -4,6 +4,12 @@ Downloads and release notes can be found at https://intrinsical.github.io/catego
 
 If you would like to help, here are some areas to focus on:
 
+## Adding new admiralty ships and stats / Fixing ships with wrong stats
+
+Star Trek Online is constantly adding new ships to the game, and I don't have access to every ship in the game. I depend on you, the STO community, to provide me with information on the newest ships. 
+
+Until I find a better way for managing submissions, please use this form to [submit ship information](https://github.com/intrinsical/sto-aso/issues/new). 
+
 ## Add support for tracking ship maintenance
 
 Currently when a ship is "Deployed" on an Admiralty assignment, the ship is removed from the [Admiral's](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/beans/Admiral.java) list of "active" ships and put into the list of "maintainence" ships. The user has to manually move ships out of the maintenance list and back ito the active list.
