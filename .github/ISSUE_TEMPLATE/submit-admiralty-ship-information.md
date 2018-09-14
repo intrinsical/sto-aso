@@ -1,5 +1,5 @@
 ---
-name: Submit Admiralty Ship Information
+name: Submit admiralty ship information
 about: Submit stats for new admiralty ships
 
 ---
