@@ -4,7 +4,7 @@ Downloads and release notes can be found at https://intrinsical.github.io/catego
 
 If you would like to help, here are some areas to focus on:
 
-## Adding new admiralty ships and stats / Fixing ships with wrong stats
+## Add or fix admiralty ships and stats
 
 Star Trek Online is constantly adding new ships to the game, and I don't have access to every ship in the game. I depend on you, the STO community, to provide me with information on the newest ships. 
 
