@@ -1,10 +1,10 @@
 # Star Trek Online Admiralty System Optimizer
 
-Downloads and release notes can be found at https://intrinsical.github.io/categories/sto-aso
+**[Downloads and release notes can be found here](https://intrinsical.github.io/categories/sto-aso)** 
 
 If you would like to help, here are some areas to focus on:
 
-## Add or fix admiralty ships and stats
+## Add or fix admiralty ship stats
 
 Star Trek Online is constantly adding new ships to the game, and I don't have access to every ship in the game. I depend on you, the STO community, to provide me with information on the newest ships. 
 
