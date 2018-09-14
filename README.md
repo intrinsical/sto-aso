@@ -2,15 +2,13 @@
 
 **[Downloads and release notes can be found here](https://intrinsical.github.io/categories/sto-aso)** 
 
-If you would like to help, here are some areas to focus on:
-
-## Add or fix admiralty ship stats
+## Help : Add or fix admiralty ship stats
 
 Star Trek Online is constantly adding new ships to the game, and I don't have access to every ship in the game. I depend on you, the STO community, to provide me with information on the newest ships. 
 
 **<span style="font-size:larger;">[Click here to submit admiralty ship information](https://github.com/intrinsical/sto-aso/issues/new?template=submit-admiralty-ship-information.md&labels=ship+info&title=New+admiralty+ship)</span>**
 
-## Add support for tracking ship maintenance
+## Help : Add support for tracking ship maintenance
 
 Currently when a ship is "Deployed" on an Admiralty assignment, the ship is removed from the [Admiral's](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/beans/Admiral.java) list of "active" ships and put into the list of "maintainence" ships. The user has to manually move ships out of the maintenance list and back ito the active list.
 
@@ -23,7 +21,7 @@ TODOs:
  * While the program is running, have a background thread move ships that are ready to be deployed out of the maintenance list.
  * Update UI to display maintenance times. Some of the classes that need to be updated includes [Ship.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/beans/Ship.java), [ShipCellRenderer.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/ui/renderers/ShipCellRenderer.java) and [AdmiralPanel.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/ui/AdmiralPanel.java)
 
-## Icons for every ship
+## Help : Icons for every ship
 
 Currently ASO only include icons for commonly used ships (small crafts, ships from Tiers 1 to 4, Epic ships, summer event ships, winter event ships, special event ships, free promotional ships). This is to prevent users from having to download a bloated program filled with ship icons they do not need. 
 
