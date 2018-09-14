@@ -4,6 +4,8 @@ about: Submit stats for new admiralty ships
 
 ---
 
+Admiralty Card Image: (Drag and drop image here)
+
 Ship Name: 
 
 Ship Type: ENG / SCI / TAC
@@ -19,5 +21,3 @@ SCI:
 TAC:
 
 Ability: 
-
-Admiralty Card Image:
