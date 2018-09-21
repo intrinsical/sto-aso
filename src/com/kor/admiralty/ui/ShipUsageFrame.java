@@ -37,7 +37,7 @@ import com.kor.admiralty.beans.Admirals;
 import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.enums.ShipSortOrder;
 import com.kor.admiralty.io.Datastore;
-import com.kor.admiralty.ui.renderers.ShipCellRenderer;
+import com.kor.admiralty.ui.renderers.UsageCountCellRenderer;
 
 import javax.swing.JComboBox;
 import java.awt.GridBagLayout;
@@ -63,7 +63,7 @@ public class ShipUsageFrame extends JFrame implements Runnable {
 	protected ShipListPanel pnlShips;
 
 	// protected ShipListModel shipModel;
-	protected ShipCellRenderer shipCellRenderer;
+	protected UsageCountCellRenderer shipCellRenderer;
 	protected JComboBox<String> cbxAdmirals;
 	private final ShipViewAction actionShipView = new ShipViewAction();
 	private final Action actionDefaultSort = new DefaultSortAction();
@@ -169,6 +169,7 @@ public class ShipUsageFrame extends JFrame implements Runnable {
 
 		pnlShips = new ShipListPanel();
 		pnlShips.setShipSortOrder(ShipSortOrder.MostUsed);
+		pnlShips.setCellRenderer(new UsageCountCellRenderer());
 		pnlMain.add(pnlShips);
 
 		if (Beans.isDesignTime()) {

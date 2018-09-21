@@ -468,7 +468,7 @@ public class Admiral {
 			for (Map.Entry<String, Integer> entry : admiral.getUsage().entrySet()) {
 				String shipName = entry.getKey();
 				int usageCount = entry.getValue();
-				Ship ship = ships.get(shipName.toLowerCase()).getUsageCountShip();
+				Ship ship = ships.get(shipName.toLowerCase());
 				if (!usageData.contains(ship)) {
 					ship.setUsageCount(usageCount);
 					usageData.add(ship);
@@ -478,14 +478,14 @@ public class Admiral {
 				}
 			}
 			for (String shipName : admiral.getActive()) {
-				Ship ship = ships.get(shipName.toLowerCase()).getUsageCountShip();
+				Ship ship = ships.get(shipName.toLowerCase());
 				if (!usageData.contains(ship)) {
 					ship.setUsageCount(0);
 					usageData.add(ship);
 				}
 			}
 			for (String shipName : admiral.getMaintenance()) {
-				Ship ship = ships.get(shipName.toLowerCase()).getUsageCountShip();
+				Ship ship = ships.get(shipName.toLowerCase());
 				if (!usageData.contains(ship)) {
 					ship.setUsageCount(0);
 					usageData.add(ship);
@@ -524,15 +524,13 @@ public class Admiral {
 				case OneTime:
 					ships.add(ship.getOneTimeShip());
 					break;
-				case UsageCount:
-					ships.add(ship.getUsageCountShip());
-					break;
 				case StarshipTrait:
 					if (ship.hasTrait()) {
-						ships.add(ship.getStarshipTraitShip());
+						ships.add(ship);
 					}
 					break;
 				case Default:
+				case UsageCount:
 				default:
 					ships.add(ship);
 					break;

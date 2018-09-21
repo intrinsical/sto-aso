@@ -20,8 +20,11 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.EnumMap;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -33,7 +36,8 @@ import com.kor.admiralty.enums.ShipFaction;
 public class GenericShipIconFactory implements ShipIconFactory {
 	
 	protected static final EnumMap<ShipFaction, EnumMap<Role, EnumMap<Rarity, ImageIcon>>> CACHE = new EnumMap<ShipFaction, EnumMap<Role, EnumMap<Rarity, ImageIcon>>>(ShipFaction.class);
-
+	protected static ZipFile ZIP_CACHE;
+	
 	protected static final int SPAN_IMAGE = Images.SPAN_IMAGE;
 	protected static final Image IMG_LOBI = getImage("lobi.png");
 	protected static final Image IMG_FED_BKG = getImage("fed_bkg.png");
@@ -69,6 +73,12 @@ public class GenericShipIconFactory implements ShipIconFactory {
 	
 	
 	static {
+		try {
+			ZIP_CACHE = new ZipFile("icons.zip");
+		} catch (IOException e) {
+			ZIP_CACHE = null;
+			e.printStackTrace();
+		}
 		for (ShipFaction faction : ShipFaction.values()) {
 			CACHE.put(faction, new EnumMap<Role, EnumMap<Rarity, ImageIcon>>(Role.class));
 			for (Role role : Role.values()) {
@@ -215,6 +225,12 @@ public class GenericShipIconFactory implements ShipIconFactory {
 		CACHE.get(faction).get(role).put(rarity, imageIcon);
 		return imageIcon;
 	}
+	
+	protected static boolean hasIcon(String name) {
+		if (getResourceURL(name) != null) return true;
+		if (ZIP_CACHE != null && ZIP_CACHE.getEntry(name + ".png") != null) return true;
+		return false;
+	}
 
 	protected static URL getResourceURL(String name) {
 		return GenericShipIconFactory.class.getResource(name);
@@ -222,6 +238,29 @@ public class GenericShipIconFactory implements ShipIconFactory {
 	
 	protected static BufferedImage getImage(String name) {
 		BufferedImage image = Images.IMG_BLANK;
+		
+		if (ZIP_CACHE != null) {
+			ZipEntry entry = ZIP_CACHE.getEntry(name + ".png");
+			if (entry != null) {
+				InputStream inStream = null;
+				try {
+					inStream = ZIP_CACHE.getInputStream(entry);
+					image = ImageIO.read(inStream);
+					return image;
+				} catch (IOException e) {
+					e.printStackTrace();
+				} finally {
+					if (inStream != null) {
+						try {
+							inStream.close();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
+		
 		try {
 			URL url = GenericShipIconFactory.class.getResource(name);
 			if (url != null) {

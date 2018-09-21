@@ -20,30 +20,23 @@ import java.awt.Component;
 
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
 import javax.swing.ListCellRenderer;
 
-import com.kor.admiralty.Globals;
 import com.kor.admiralty.beans.Ship;
-import com.kor.admiralty.enums.Rarity;
-import com.kor.admiralty.ui.resources.Swing;
 import com.kor.admiralty.ui.resources.Images;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
-import javax.swing.SwingConstants;
 
-public class ShipCellRenderer extends JPanel implements ListCellRenderer<Ship> {
+public class ShipCellRenderer extends BasicShipCellRenderer {
 
 	private static final long serialVersionUID = 5072040648881085415L;
 	private static ShipCellRenderer SINGLETON; 
-	private static final CustomHTMLEditorKit HTML_KIT = new CustomHTMLEditorKit(Globals.STYLESHEET_TRAIT);
 	
 	public static ListCellRenderer<Ship> cellRenderer() {
 		if (SINGLETON == null) {
@@ -53,50 +46,16 @@ public class ShipCellRenderer extends JPanel implements ListCellRenderer<Ship> {
 	}
 	
 	protected JPanel pnlStats;
-	protected JLabel lblIcon;
-	protected JLabel lblName;
 	protected JLabel lblEng;
 	protected JLabel lblTac;
 	protected JLabel lblSci;
 	protected JLabel lblAbility;
-	protected JTextPane lblStarshipTrait;
-	protected JLabel lblUsageCount;
 	
 	/**
 	 * Create the panel.
 	 */
 	public ShipCellRenderer() {
-		setBorder(Swing.BorderDefault);
-		setBackground(Swing.ColorBackground);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[] {0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
-		setLayout(gridBagLayout);
-		
-		Dimension dim64 = new Dimension(64, 64);
-		
-		lblIcon = new JLabel();
-		lblIcon.setPreferredSize(dim64);
-		GridBagConstraints gbc_lblIcon = new GridBagConstraints();
-		gbc_lblIcon.anchor = GridBagConstraints.NORTHWEST;
-		gbc_lblIcon.gridheight = 3;
-		gbc_lblIcon.insets = new Insets(5, 5, 0, 5);
-		gbc_lblIcon.gridx = 0;
-		gbc_lblIcon.gridy = 0;
-		add(lblIcon, gbc_lblIcon);
-		
-		lblName = new JLabel("Ship Name");
-		lblName.setFont(new Font("Tahoma", Font.BOLD, 12));
-		GridBagConstraints gbc_lblName = new GridBagConstraints();
-		gbc_lblName.fill = GridBagConstraints.HORIZONTAL;
-		gbc_lblName.weightx = 10.0;
-		gbc_lblName.insets = new Insets(5, 0, 5, 5);
-		gbc_lblName.gridx = 1;
-		gbc_lblName.gridy = 0;
-		add(lblName, gbc_lblName);
-		
+		super();
 		pnlStats = new JPanel();
 		pnlStats.setBorder(null);
 		pnlStats.setOpaque(false);
@@ -154,36 +113,6 @@ public class ShipCellRenderer extends JPanel implements ListCellRenderer<Ship> {
 		gbc_lblAbility.gridy = 2;
 		add(lblAbility, gbc_lblAbility);
 		
-		lblStarshipTrait = new JTextPane();
-		lblStarshipTrait.setContentType("text/html");
-		lblStarshipTrait.setEditorKit(HTML_KIT);
-		lblStarshipTrait.setEditable(false);
-		lblStarshipTrait.setOpaque(false);
-		lblStarshipTrait.setBackground(new Color(0, 0, 0, 0));
-		lblStarshipTrait.setDocument(HTML_KIT.createDefaultDocument());
-		GridBagConstraints gbc_lblStarshipTrait = new GridBagConstraints();
-		gbc_lblStarshipTrait.fill = GridBagConstraints.BOTH;
-		gbc_lblStarshipTrait.anchor = GridBagConstraints.WEST;
-		gbc_lblStarshipTrait.weightx = 10.0;
-		gbc_lblStarshipTrait.gridheight = 2;
-		gbc_lblStarshipTrait.insets = new Insets(0, 0, 0, 5);
-		gbc_lblStarshipTrait.gridx = 1;
-		gbc_lblStarshipTrait.gridy = 1;
-		add(lblStarshipTrait, gbc_lblStarshipTrait);
-		
-		lblUsageCount = new JLabel("0");
-		lblUsageCount.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUsageCount.setForeground(Color.WHITE);
-		lblUsageCount.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblUsageCount.setPreferredSize(dim64);
-		GridBagConstraints gbc_lblUsageCount = new GridBagConstraints();
-		gbc_lblUsageCount.anchor = GridBagConstraints.EAST;
-		gbc_lblUsageCount.gridheight = 3;
-		gbc_lblUsageCount.insets = new Insets(5, 0, 5, 5);
-		gbc_lblUsageCount.gridx = 1;
-		gbc_lblUsageCount.gridy = 0;
-		add(lblUsageCount, gbc_lblUsageCount);
-		
 		setShip(null);
 	}
 	
@@ -193,47 +122,18 @@ public class ShipCellRenderer extends JPanel implements ListCellRenderer<Ship> {
 
 	@Override
 	public Component getListCellRendererComponent(JList<? extends Ship> list, Ship ship, int index, boolean isSelected, boolean cellHasFocus) {
+		super.getListCellRendererComponent(list, ship, index, isSelected, cellHasFocus);
 		if (ship == null) {
-			lblIcon.setIcon(Images.ICON_BLANK);
-			lblName.setText("No Ship");
-			lblName.setForeground(Rarity.Common.getColor());
 			lblEng.setText("0");
 			lblTac.setText("0");
 			lblSci.setText("0");
 			lblAbility.setText("");
-			lblStarshipTrait.setText("");;
-			lblStarshipTrait.setVisible(false);
-			lblUsageCount.setText(String.format("%,d", 0));
-			lblUsageCount.setVisible(false);
 		}
 		else {
-			lblIcon.setIcon(Images.getIcon(ship.getIconName(), ship.getFaction(), ship.getRole(), ship.getRarity()));
-			if (ship.isOneTime()) {
-				lblName.setText("(1x) " + ship.getName());
-			}
-			else {
-				lblName.setText(ship.getName());
-			}
-			boolean showTrait = ship.isShowStarshipTrait();
-			pnlStats.setVisible(!showTrait);
-			lblName.setForeground(ship.getRarity().getColor());
 			lblEng.setText("" + ship.getEng());
 			lblTac.setText("" + ship.getTac());
 			lblSci.setText("" + ship.getSci());
 			lblAbility.setText(ship.getSpecialAbility().toString());
-			lblAbility.setVisible(!showTrait);
-			lblStarshipTrait.setText(ship.getTrait());
-			lblStarshipTrait.setVisible(showTrait);
-			lblUsageCount.setText(String.format("%,d", ship.getUsageCount()));
-			lblUsageCount.setVisible(ship.isShowUsageCount());
-		}
-		if (isSelected) {
-			setBorder(Swing.BorderHighlighted);
-			setBackground(Swing.ColorBackgroundHighlighted);
-		}
-		else {
-			setBorder(Swing.BorderDefault);
-			setBackground(Swing.ColorBackground);
 		}
 		return this;
 	}

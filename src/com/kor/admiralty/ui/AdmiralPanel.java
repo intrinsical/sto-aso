@@ -44,6 +44,7 @@ import com.kor.admiralty.ui.components.JColumnList;
 import com.kor.admiralty.ui.components.JListComponentAdapter;
 import com.kor.admiralty.ui.models.ShipListModel;
 import com.kor.admiralty.ui.renderers.ShipCellRenderer;
+import com.kor.admiralty.ui.renderers.StarshipTraitCellRenderer;
 import com.kor.admiralty.ui.resources.Images;
 import com.kor.admiralty.ui.resources.Swing;
 
@@ -77,6 +78,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.JToggleButton;
+import javax.swing.ListCellRenderer;
 import javax.swing.ButtonGroup;
 import javax.swing.SwingConstants;
 
@@ -88,7 +90,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 	protected JTextField txtName;
 	protected JComboBox<PlayerFaction> cbxFaction;
 	protected JComboBox<ShipPriority> cbxShipPriority;
-	protected ShipCellRenderer shipCellRenderer;
+	protected ListCellRenderer<Ship> shipCellRenderer;
 	protected JList<Ship> lstActive;
 	protected JList<Ship> lstMaintenance;
 	protected JList<Ship> lstOneTimeShips;
@@ -334,7 +336,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		gbc_sclActive.gridy = 1;
 		pnlPrimaryShips.add(sclActive, gbc_sclActive);
 
-		shipCellRenderer = new ShipCellRenderer();
+		shipCellRenderer = ShipCellRenderer.cellRenderer();
 		shipActiveModel = new ShipListModel();
 		lstActive = new JList<Ship>(shipActiveModel);
 		lstActive.addMouseListener(new MouseAdapter() {
@@ -678,7 +680,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		shipTraitsModel = new ShipListModel();
 		lstTraits = new JColumnList<Ship>(shipTraitsModel);
 		lstTraits.setLayoutOrientation(JList.VERTICAL);
-		lstTraits.setCellRenderer(shipCellRenderer);
+		lstTraits.setCellRenderer(new StarshipTraitCellRenderer());
 		sclTraits.setViewportView(lstTraits);
 		sclTraits.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		pnlStarshipTraits.addComponentListener(new JListComponentAdapter<Ship>(lstTraits));

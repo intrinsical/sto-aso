@@ -50,7 +50,7 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 			return CACHE.get(iconName);
 		}
 		
-		if (getResourceURL(iconName) == null) {
+		if (!hasIcon(iconName)) {
 			// No ship icon available, fallback to using generic ship icon 
 			return super.getIcon(iconName, faction, role, rarity);
 		}

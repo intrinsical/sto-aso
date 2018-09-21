@@ -24,6 +24,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 import com.kor.admiralty.beans.Ship;
+import com.kor.admiralty.beans.ShipImpl;
 import com.kor.admiralty.beans.SpecialAbility;
 import com.kor.admiralty.enums.Rarity;
 import com.kor.admiralty.enums.Role;
@@ -73,7 +74,7 @@ public class ShipDatabaseParser {
 					trait = value;
 				}
 			}
-			Ship ship = new Ship(faction, tier, rarity, category, name, eng, tac, sci, ability, trait);
+			Ship ship = new ShipImpl(faction, tier, rarity, category, name, eng, tac, sci, ability, trait);
 			return ship;
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

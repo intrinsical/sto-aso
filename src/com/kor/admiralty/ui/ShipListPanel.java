@@ -27,6 +27,7 @@ import java.util.TreeSet;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.ListCellRenderer;
 
 import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.enums.PlayerFaction;
@@ -68,7 +69,7 @@ public class ShipListPanel extends JPanel {
 	protected static final String OKAY_CANCEL[] = new String[] { LabelOkay, LabelCancel };
 
 	protected ShipListModel shipListModel = new ShipListModel();
-	protected ShipCellRenderer shipCellRenderer = new ShipCellRenderer();
+	protected ListCellRenderer<Ship> shipCellRenderer = ShipCellRenderer.cellRenderer();
 	protected JList<Ship> lstShips;
 	protected JCheckBox chckbxFederation;
 	protected JCheckBox chckbxKlingon;
@@ -374,6 +375,11 @@ public class ShipListPanel extends JPanel {
 		Dimension preferredSize = getPreferredSize();
 		preferredSize.height = (int) (screenSize.height * 0.7f);
 		setPreferredSize(preferredSize);
+	}
+	
+	public void setCellRenderer(ListCellRenderer<Ship> renderer) {
+		this.shipCellRenderer = renderer;
+		lstShips.setCellRenderer(shipCellRenderer);
 	}
 	
 	public void setShips(Collection<Ship> ships) {

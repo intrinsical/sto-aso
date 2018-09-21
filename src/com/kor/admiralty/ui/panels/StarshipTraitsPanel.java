@@ -31,7 +31,7 @@ import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.ui.components.JColumnList;
 import com.kor.admiralty.ui.components.JListComponentAdapter;
 import com.kor.admiralty.ui.models.ShipListModel;
-import com.kor.admiralty.ui.renderers.ShipCellRenderer;
+import com.kor.admiralty.ui.renderers.StarshipTraitCellRenderer;
 
 import java.awt.GridBagLayout;
 import javax.swing.ScrollPaneConstants;
@@ -84,7 +84,7 @@ public class StarshipTraitsPanel extends JPanel implements AdmiralUI {
 		uiModel = new ShipListModel();
 		uiList = new JColumnList<Ship>(uiModel);
 		uiList.setLayoutOrientation(JList.VERTICAL);
-		uiList.setCellRenderer(ShipCellRenderer.cellRenderer());
+		uiList.setCellRenderer(new StarshipTraitCellRenderer());
 		scrollPane.setViewportView(uiList);
 		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		

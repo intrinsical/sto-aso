@@ -28,7 +28,7 @@ import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.io.Datastore;
 import com.kor.admiralty.ui.components.JColumnList;
 import com.kor.admiralty.ui.models.ShipListModel;
-import com.kor.admiralty.ui.renderers.ShipCellRenderer;
+import com.kor.admiralty.ui.renderers.StarshipTraitCellRenderer;
 import com.kor.admiralty.ui.resources.Images;
 import com.kor.admiralty.ui.resources.Swing;
 import javax.swing.JScrollPane;
@@ -48,7 +48,7 @@ public class TraitViewer extends JFrame implements Runnable {
 	
 	protected JList<Ship> traitsList;
 	protected ShipListModel traitsModel;
-	protected ShipCellRenderer shipCellRenderer;
+	protected StarshipTraitCellRenderer cellRenderer;
 	
 	public TraitViewer() {
 		Swing.setLookAndFeel();
@@ -61,18 +61,18 @@ public class TraitViewer extends JFrame implements Runnable {
 		JScrollPane traitsScroll = new JScrollPane();
 		getContentPane().add(traitsScroll);
 		
-		shipCellRenderer = new ShipCellRenderer();
+		cellRenderer = new StarshipTraitCellRenderer();
 		traitsModel = new ShipListModel();
 		traitsList = new JColumnList<Ship>(traitsModel);
 		traitsList.setLayoutOrientation(JList.VERTICAL);
-		traitsList.setCellRenderer(shipCellRenderer);
+		traitsList.setCellRenderer(cellRenderer);
 		traitsScroll.setViewportView(traitsList);
 		traitsScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		List<Ship> ships = new ArrayList<Ship>();
 		for (Ship ship : Datastore.getAllShips().values()) {
 			if (ship.hasTrait()) {
-				ships.add(ship.getStarshipTraitShip());
+				ships.add(ship);
 			}
 		}
 		traitsModel.addShips(ships);
