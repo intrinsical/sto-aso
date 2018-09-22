@@ -34,6 +34,12 @@ public class RenamedShipParser {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

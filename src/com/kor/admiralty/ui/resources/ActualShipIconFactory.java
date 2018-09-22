@@ -21,19 +21,18 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
 
 import com.kor.admiralty.enums.Rarity;
 import com.kor.admiralty.enums.Role;
 import com.kor.admiralty.enums.ShipFaction;
+import com.kor.admiralty.io.Datastore;
 
 public class ActualShipIconFactory extends GenericShipIconFactory {
 	
-	protected static Map<String, ImageIcon> CACHE = new HashMap<String, ImageIcon>();
-
 	protected static final Image IMG_ENG = getBicubicScaledImage("frame_eng.png");
 	protected static final Image IMG_TAC = getBicubicScaledImage("frame_tac.png");
 	protected static final Image IMG_SCI = getBicubicScaledImage("frame_sci.png");
@@ -44,10 +43,17 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 	protected static final Image IMG_ULTRARARE = getBicubicScaledImage("frame_ultrarare.png");
 	protected static final Image IMG_EPIC = getBicubicScaledImage("frame_epic.png");
 	
+	protected SortedMap<String, ImageIcon> cache = new TreeMap<String, ImageIcon>();
+
+	public ActualShipIconFactory() {
+		super();
+		cache = Datastore.getCachedIcons();
+	}
+	
 	@Override
 	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity) {
-		if (CACHE.containsKey(iconName)) {
-			return CACHE.get(iconName);
+		if (cache.containsKey(iconName)) {
+			return cache.get(iconName);
 		}
 		
 		if (!hasIcon(iconName)) {
@@ -121,7 +127,8 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 		
 		g.dispose();
 		ImageIcon imageIcon = new ImageIcon(image);
-		CACHE.put(iconName, imageIcon);
+		cache.put(iconName, imageIcon);
+		Datastore.setIconCacheChanged(true);
 		return imageIcon;
 	}
 

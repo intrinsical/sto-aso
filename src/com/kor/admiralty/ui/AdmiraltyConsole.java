@@ -113,6 +113,7 @@ public class AdmiraltyConsole extends JFrame implements Runnable, PropertyChange
 			@Override
 			public void windowClosing(WindowEvent e) {
 				Datastore.setAdmirals(admirals);
+				Datastore.preserveIconCache();
 			}
 		});
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

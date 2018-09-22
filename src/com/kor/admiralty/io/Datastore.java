@@ -25,6 +25,7 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.ImageIcon;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -45,13 +46,18 @@ public class Datastore {
 	private static final String NAME_ASSIGNMENTS = "assignments.csv";
 	private static final String NAME_RENAMED = "renamed.csv";
 	private static final String NAME_TRAITS = "traits.csv";
+	private static final String NAME_ICONCACHE = "icons.zip";
+	private static final String NAME_NEWCACHE = "newicons.zip";
+	//private static final String URL_WEBICONS = "https://github.com/intrinsical/sto-aso/raw/master/icons/%s.png";
 	
 	private static SortedMap<String, Ship> SHIPS = new TreeMap<String, Ship>();
 	private static SortedMap<String, Event> EVENTS = new TreeMap<String, Event>();
 	private static SortedMap<String, AdmAssignment> ASSIGNMENTS = new TreeMap<String, AdmAssignment>();
 	private static SortedMap<String, String> RENAMED = new TreeMap<String, String>();
 	private static SortedMap<String, String> TRAITS = new TreeMap<String, String>();
+	private static SortedMap<String, ImageIcon> ICONS = new TreeMap<String, ImageIcon>();
 	private static Admirals ADMIRALS = null;
+	private static boolean ICONS_CHANGED = false;
 
 	private static transient JAXBContext admiralsContext;
 	private static transient Marshaller admiralsMarshaller;
@@ -94,6 +100,23 @@ public class Datastore {
 			loadTraits();
 		}
 		return TRAITS;
+	}
+	
+	public static SortedMap<String, ImageIcon> getCachedIcons() {
+		if (ICONS.isEmpty()) {
+			loadCachedIcons();
+		}
+		return ICONS;
+	}
+	
+	public static void setIconCacheChanged(boolean change) {
+		ICONS_CHANGED = change;
+	}
+	
+	public static void preserveIconCache() {
+		if (ICONS_CHANGED) {
+			saveCachedIcons();
+		}
 	}
 	
 	private static void loadShipDatabase() {
@@ -139,6 +162,24 @@ public class Datastore {
 		TRAITS.clear();
 		Reader reader = loadFile(file);
 		TraitsParser.loadTraits(reader, TRAITS);
+	}
+	
+	private static void loadCachedIcons() {
+		File file = new File(NAME_ICONCACHE);
+		ICONS.clear();
+		IconLoader.loadCachedIcons(file, ICONS);
+	}
+	
+	private static void saveCachedIcons() {
+		File oldFile = new File(NAME_ICONCACHE);
+		if (oldFile.exists()) {
+			oldFile.delete();
+		}
+		
+		File newFile = new File(NAME_NEWCACHE);
+		IconLoader.saveCachedIcons(newFile, ICONS);
+		
+		newFile.renameTo(oldFile);
 	}
 	
 	private static long getCacheTime() {
