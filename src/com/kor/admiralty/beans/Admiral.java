@@ -542,7 +542,9 @@ public class Admiral {
 	/**
 	 * Validation check on all ships.
 	 * 1) Check every ship against the "renamed ship list".
-	 * 2) Remove ships that do not exist in the ship database.  
+	 * 2) Remove ships that do not exist in the ship database.
+	 * 3) Identify ships owned by the player
+	 * 4) If required, download ship icon from the web  
 	 */
 	public void validateShips() {
 		List<String> activeErr = new ArrayList<String>();
@@ -579,19 +581,38 @@ public class Admiral {
 			}
 		}
 		for (String name : active) {
-			if (!database.containsKey(name.toLowerCase())) {
+			String shipId = name.toLowerCase(); 
+			if (!database.containsKey(shipId)) {
+				// Ship does not exist in the ship database
 				activeErr.add(name);
 			}
+			else {
+				// Mark ship as owned by player
+				// Download ship icon if required
+				database.get(shipId).setOwned(true);
+			}
 		}
+		
 		for (String name : maintenance) {
-			if (!database.containsKey(name.toLowerCase())) {
+			String shipId = name.toLowerCase();
+			if (!database.containsKey(shipId)) {
+				// Ship does not exist in the ship database
 				maintenanceErr.add(name);
+			}
+			else {
+				// Mark ship as owned by player
+				database.get(shipId).setOwned(true);
 			}
 		}
 		/*
 		for (String name : maintenanceV2.keySet()) {
 			if (!database.containsKey(name.toLowerCase())) {
+				// Ship does not exist in the ship database
 				maintenanceV2Err.add(name);
+			}
+			else {
+				// Mark ship as owned by player
+				database.get(name).setOwned(true);
 			}
 		}
 		*/

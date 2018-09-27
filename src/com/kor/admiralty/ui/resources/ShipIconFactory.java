@@ -24,6 +24,6 @@ import com.kor.admiralty.enums.ShipFaction;
 
 public interface ShipIconFactory {
 
-	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity); 
+	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity, boolean owned); 
 	
 }

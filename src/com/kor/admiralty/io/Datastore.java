@@ -36,6 +36,7 @@ import com.kor.admiralty.beans.Admiral;
 import com.kor.admiralty.beans.Admirals;
 import com.kor.admiralty.beans.Event;
 import com.kor.admiralty.beans.Ship;
+import com.kor.admiralty.ui.workers.SwingWorkerExecutor;
 
 public class Datastore {
 
@@ -208,6 +209,10 @@ public class Datastore {
 			for (Admiral admiral : ADMIRALS.getAdmirals()) {
 				admiral.validateShips();
 				admiral.activateShips();
+			}
+			// Download icons for ships owned by the user
+			for (Ship ship : getAllShips().values()) {
+				if (ship.isOwned()) SwingWorkerExecutor.getInstance().downloadIcon(ship); 
 			}
 		}
 		return ADMIRALS;

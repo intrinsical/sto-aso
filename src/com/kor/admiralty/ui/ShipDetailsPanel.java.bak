@@ -238,7 +238,7 @@ public class ShipDetailsPanel extends JPanel {
 			lblSpecialAbility.setText(Empty);
 			lblMaintenance.setText(Empty);
 		} else {
-			lblIcon.setIcon(Images.getIcon(ship.getIconName(), ship.getFaction(), ship.getRole(), ship.getRarity(), ship.isOwned()));
+			lblIcon.setIcon(Images.getIcon(ship.getIconName(), ship.getFaction(), ship.getRole(), ship.getRarity()));
 			lblShipName.setText(ship.getName());
 			lblTier.setText(ship.getTier().toString());
 			lblRarity.setText(ship.getRarity().toString());

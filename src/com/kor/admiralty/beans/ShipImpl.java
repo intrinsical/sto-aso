@@ -34,6 +34,7 @@ public class ShipImpl implements Ship, Cloneable {
 	protected int sci;
 	protected SpecialAbility ability;
 	protected String trait;
+	protected boolean owned;
 	protected boolean maintenance;
 	protected boolean oneTime;
 	protected boolean showStarshipTrait;
@@ -53,6 +54,7 @@ public class ShipImpl implements Ship, Cloneable {
 		this.sci = sci;
 		this.ability = rule;
 		this.trait = trait;
+		this.owned = false;
 		this.maintenance = false;
 		this.oneTime = false;
 		this.showStarshipTrait = false;
@@ -173,6 +175,16 @@ public class ShipImpl implements Ship, Cloneable {
 	@Override
 	public boolean hasTrait() {
 		return this.trait.length() > 0;
+	}
+	
+	@Override 
+	public boolean isOwned() {
+		return owned;
+	}
+	
+	@Override
+	public void setOwned(boolean owned) {
+		this.owned = owned;
 	}
 
 	/*/

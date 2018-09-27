@@ -22,7 +22,6 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.util.SortedMap;
-import java.util.TreeMap;
 
 import javax.swing.ImageIcon;
 
@@ -43,24 +42,34 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 	protected static final Image IMG_ULTRARARE = getBicubicScaledImage("frame_ultrarare.png");
 	protected static final Image IMG_EPIC = getBicubicScaledImage("frame_epic.png");
 	
-	protected SortedMap<String, ImageIcon> cache = new TreeMap<String, ImageIcon>();
-
 	public ActualShipIconFactory() {
 		super();
-		cache = Datastore.getCachedIcons();
 	}
 	
 	@Override
-	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity) {
+	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity, boolean owned) {
+		SortedMap<String, ImageIcon> cache = Datastore.getCachedIcons();
 		if (cache.containsKey(iconName)) {
 			return cache.get(iconName);
 		}
 		
-		if (!hasIcon(iconName)) {
-			// No ship icon available, fallback to using generic ship icon 
-			return super.getIcon(iconName, faction, role, rarity);
+		if (!hasBundledIcon(iconName)) {
+			// Ship icon is not found in the .jar file, fallback to using generic ship icon 
+			return super.getIcon(iconName, faction, role, rarity, owned);
 		}
 		
+		Image shipIcon = getSmoothScaledImage(iconName);
+		ImageIcon imageIcon = buildIcon(shipIcon, faction, role, rarity); 
+		cache.put(iconName, imageIcon);
+		Datastore.setIconCacheChanged(true);
+		return imageIcon;
+	}
+	
+	public static boolean hasBundledIcon(String iconName) {
+		return ActualShipIconFactory.class.getResource(iconName) != null;
+	}
+
+	public static ImageIcon buildIcon(Image shipIcon, ShipFaction faction, Role role, Rarity rarity) {
 		BufferedImage image = new BufferedImage(SPAN_IMAGE, SPAN_IMAGE, BufferedImage.TYPE_INT_ARGB);
 		Graphics g = image.getGraphics();
 		
@@ -85,7 +94,7 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 		}
 		
 		// Draw ship icon
-		g.drawImage(getSmoothScaledImage(iconName), 0, 0, SPAN_IMAGE, SPAN_IMAGE, null);
+		g.drawImage(shipIcon, 0, 0, SPAN_IMAGE, SPAN_IMAGE, null);
 		
 		// Draw role frame
 		switch (role) {
@@ -126,12 +135,9 @@ public class ActualShipIconFactory extends GenericShipIconFactory {
 		}
 		
 		g.dispose();
-		ImageIcon imageIcon = new ImageIcon(image);
-		cache.put(iconName, imageIcon);
-		Datastore.setIconCacheChanged(true);
-		return imageIcon;
+		return new ImageIcon(image);
 	}
-
+	
 	protected static Image getBicubicScaledImage(String name) {
 		BufferedImage image = getImage(name);
 		BufferedImage scaledImage = new BufferedImage(SPAN_IMAGE, SPAN_IMAGE, BufferedImage.TYPE_INT_ARGB);

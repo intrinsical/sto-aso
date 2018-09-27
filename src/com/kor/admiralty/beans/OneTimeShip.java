@@ -127,6 +127,15 @@ public class OneTimeShip implements Ship {
 	public boolean hasTrait() {
 		return parent.hasTrait();
 	}
+	
+	@Override 
+	public boolean isOwned() {
+		return false;
+	}
+	
+	@Override
+	public void setOwned(boolean owned) {
+	}
 
 	@Override
 	public int getUsageCount() {

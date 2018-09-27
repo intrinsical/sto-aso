@@ -47,6 +47,8 @@ public interface Ship extends Comparable<Ship> {
 	public void setTrait(String trait);
 	public boolean hasTrait();
 	public int getUsageCount();
+	public boolean isOwned();
+	public void setOwned(boolean owned);
 	public void setUsageCount(int usageCount);
 	public void incrementUsageCount(int count);
 	public Ship getOneTimeShip();

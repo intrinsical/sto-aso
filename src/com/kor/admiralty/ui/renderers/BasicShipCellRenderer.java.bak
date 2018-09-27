@@ -42,6 +42,9 @@ public abstract class BasicShipCellRenderer extends JPanel implements ListCellRe
 	private JLabel lblIcon;
 	private JLabel lblName;
 	
+	/**
+	 * Create the panel.
+	 */
 	public BasicShipCellRenderer() {
 		setBorder(Swing.BorderDefault);
 		setBackground(Swing.ColorBackground);
@@ -87,7 +90,7 @@ public abstract class BasicShipCellRenderer extends JPanel implements ListCellRe
 			lblName.setForeground(Rarity.Common.getColor());
 		}
 		else {
-			lblIcon.setIcon(Images.getIcon(ship.getIconName(), ship.getFaction(), ship.getRole(), ship.getRarity(), ship.isOwned()));
+			lblIcon.setIcon(Images.getIcon(ship.getIconName(), ship.getFaction(), ship.getRole(), ship.getRarity()));
 			lblName.setText(ship.getDisplayName());
 			lblName.setForeground(ship.getRarity().getColor());
 		}

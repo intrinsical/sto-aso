@@ -32,6 +32,7 @@ import com.kor.admiralty.enums.ShipFaction;
 
 public class GenericShipIconFactory implements ShipIconFactory {
 	
+	protected static final String URL_WEBICONS = "https://github.com/intrinsical/sto-aso/raw/master/icons/%s.png";
 	protected static final EnumMap<ShipFaction, EnumMap<Role, EnumMap<Rarity, ImageIcon>>> CACHE = new EnumMap<ShipFaction, EnumMap<Role, EnumMap<Rarity, ImageIcon>>>(ShipFaction.class);
 	
 	protected static final int SPAN_IMAGE = Images.SPAN_IMAGE;
@@ -77,7 +78,7 @@ public class GenericShipIconFactory implements ShipIconFactory {
 		}
 	};
 	
-	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity) {
+	public ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity, boolean owned) {
 		if (CACHE.get(faction).get(role).containsKey(rarity)) {
 			return CACHE.get(faction).get(role).get(rarity);
 		}
@@ -216,15 +217,6 @@ public class GenericShipIconFactory implements ShipIconFactory {
 		return imageIcon;
 	}
 	
-	public static boolean hasIcon(String name) {
-		if (getResourceURL(name) != null) return true;
-		return false;
-	}
-
-	protected static URL getResourceURL(String name) {
-		return GenericShipIconFactory.class.getResource(name);
-	}
-	
 	protected static BufferedImage getImage(String name) {
 		BufferedImage image = Images.IMG_BLANK;
 		
@@ -232,6 +224,13 @@ public class GenericShipIconFactory implements ShipIconFactory {
 			URL url = GenericShipIconFactory.class.getResource(name);
 			if (url != null) {
 				image = ImageIO.read(url);
+			}
+			else {
+				url = new URL(String.format(URL_WEBICONS, name));
+				long start = System.nanoTime();
+				image = ImageIO.read(url);
+				long end = System.nanoTime();
+				System.out.println((end - start) + "ns");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
