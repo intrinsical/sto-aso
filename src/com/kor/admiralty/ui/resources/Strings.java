@@ -137,8 +137,8 @@ public class Strings {
 		public static final String LabelFaction = "Faction: ";
 		public static final String LabelShipPriority = "Prioritize: ";
 		public static final String LabelShip = "Ship";
-		public static final String LabelExportShips = "Export...";
-		public static final String LabelImportShips = "Import...";
+		public static final String LabelExportShips = "Export";
+		public static final String LabelImportShips = "Import";
 		public static final String LabelActiveShips = "Active Ships";
 		public static final String LabelMaintenanceShips = "Maintenance Ships";
 		public static final String LabelOneTimeShips = "One-Time Ships";

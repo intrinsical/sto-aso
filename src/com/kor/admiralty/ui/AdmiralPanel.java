@@ -307,7 +307,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 
 		JButton btnAddShip = new JButton(actionAddShip);
 		GridBagConstraints gbc_btnAddShip = new GridBagConstraints();
-		gbc_btnAddShip.insets = new Insets(0, 0, 5, 0);
+		gbc_btnAddShip.insets = new Insets(0, 0, 2, 0);
 		gbc_btnAddShip.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnAddShip.gridx = 0;
 		gbc_btnAddShip.gridy = 0;
@@ -315,7 +315,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 
 		JButton btnRemoveShip = new JButton(actionRemoveShip);
 		GridBagConstraints gbc_btnRemoveShip = new GridBagConstraints();
-		gbc_btnRemoveShip.insets = new Insets(0, 0, 5, 0);
+		gbc_btnRemoveShip.insets = new Insets(0, 0, 15, 0);
 		gbc_btnRemoveShip.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnRemoveShip.gridx = 0;
 		gbc_btnRemoveShip.gridy = 1;
@@ -516,7 +516,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		
 		btnExportShips = new JButton(actionExportShips);
 		GridBagConstraints gbc_btnExportShips = new GridBagConstraints();
-		gbc_btnExportShips.insets = new Insets(0, 0, 5, 0);
+		gbc_btnExportShips.insets = new Insets(0, 0, 2, 0);
 		gbc_btnExportShips.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnExportShips.gridx = 0;
 		gbc_btnExportShips.gridy = 2;
@@ -891,7 +891,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		private static final long serialVersionUID = -7749618373959400163L;
 
 		public ExportShipsAction() {
-			super(LabelExportShips);
+			super(LabelExportShips, Images.ICON_EXPORT);
 			putValue(SHORT_DESCRIPTION, DescExportShips);
 		}
 
@@ -925,7 +925,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		private static final long serialVersionUID = 8306416465068232284L;
 
 		public ImportShipsAction() {
-			super(LabelImportShips);
+			super(LabelImportShips, Images.ICON_IMPORT);
 			putValue(SHORT_DESCRIPTION, DescImportShips);
 		}
 

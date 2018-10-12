@@ -70,6 +70,8 @@ public class Images {
 	public static final ImageIcon ICON_PIN = new ImageIcon(Images.class.getResource("pin.png"));
 	public static final ImageIcon ICON_INFO = new ImageIcon(Images.class.getResource("info.png"));
 	public static final ImageIcon ICON_CHART = new ImageIcon(Images.class.getResource("chart.png"));
+	public static final ImageIcon ICON_EXPORT = new ImageIcon(Images.class.getResource("export.png"));
+	public static final ImageIcon ICON_IMPORT = new ImageIcon(Images.class.getResource("import.png"));
 	
 	//public static ImageIcon getIcon(String iconName, ShipFaction faction, Role role, Rarity rarity) {
 	//	return getIcon(iconName, faction, role, rarity, false);
