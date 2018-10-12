@@ -14,6 +14,18 @@ Currently when a ship is "Deployed" on an Admiralty assignment, the ship is remo
 
 It would be nice if ASO can track when each ship is ready to be deployed again, and automatically move the ship out of the maintenance list at the right time.
 
+Specifically, information is currently required for the following ships:
+
+ * Narendra Support Cruiser (T6)
+ * Ambassador Fleet Support Cruiser (T6)
+ * Vor'ral Support Battlecruiser (T6)
+ * Fleet Support Battlecruiser (T6)
+ * Hur'q Assembly Multi-Mission Science Vessel (T6)
+ * Hur'q Ravager Escort Carrier (T6)
+ * Europa Heavy Battlecruiser (T6)
+ * Fleet Heavy Battlecruiser (T6)
+ * Walker Prototype Light Exploration Cruiser
+
 You may have noticed sections of the [Admiral](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/beans/Admiral.java) class has been commented out. Those commented sections contain my incomplete attempt at tracking maintenance times. 
 
 TODOs: 
