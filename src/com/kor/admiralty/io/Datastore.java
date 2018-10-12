@@ -16,10 +16,15 @@
  *******************************************************************************/
 package com.kor.admiralty.io;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.io.Reader;
+import java.io.Writer;
+import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -31,6 +36,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import com.kor.admiralty.Globals;
 import com.kor.admiralty.beans.AdmAssignment;
 import com.kor.admiralty.beans.Admiral;
 import com.kor.admiralty.beans.Admirals;
@@ -49,7 +55,7 @@ public class Datastore {
 	private static final String NAME_TRAITS = "traits.csv";
 	private static final String NAME_ICONCACHE = "icons.zip";
 	private static final String NAME_NEWCACHE = "newicons.zip";
-	//private static final String URL_WEBICONS = "https://github.com/intrinsical/sto-aso/raw/master/icons/%s.png";
+	private static final File FOLDER_CURRENT = new File(".");
 	
 	private static SortedMap<String, Ship> SHIPS = new TreeMap<String, Ship>();
 	private static SortedMap<String, Event> EVENTS = new TreeMap<String, Event>();
@@ -66,6 +72,10 @@ public class Datastore {
 
 	static {
 		init();
+	}
+	
+	public static File getCurrentFolder() {
+		return FOLDER_CURRENT;
 	}
 
 	public static SortedMap<String, Ship> getAllShips() {
@@ -110,6 +120,17 @@ public class Datastore {
 		return ICONS;
 	}
 	
+	public static boolean isIconCacheStale() {
+		File file = new File(NAME_ICONCACHE);
+		if (!file.exists()) return true;
+		
+		if (isStale(file)) {
+			file.setLastModified(System.currentTimeMillis());
+			return true;
+		}
+		return false;
+	}
+	
 	public static void setIconCacheChanged(boolean change) {
 		ICONS_CHANGED = change;
 	}
@@ -122,6 +143,8 @@ public class Datastore {
 	
 	private static void loadShipDatabase() {
 		File file = new File(NAME_SHIPCACHE);
+		
+		/*/ Unused code, currently does nothing.
 		if (!file.exists()) {
 			//updateShipDatabase(file);
 		}
@@ -131,10 +154,20 @@ public class Datastore {
 		if (refreshTime < lastModified) {
 			//updateShipDatabase(file);
 		}
+		/*/
 
 		SHIPS.clear();
 		Reader reader = loadFile(file);
 		ShipDatabaseParser.loadShipDatabase(reader, SHIPS);
+		
+		/*/ Code needs further refinement. 
+		// Need to consider the implication of silently downloading the same file every week.
+		// Is there a better way? Check against some sort of hash before downloading?
+		if (isStale(file)) {
+			// Update ships.csv for the next time
+			SwingWorkerExecutor.getInstance().downloadShipList(file);
+		}
+		/*/
 	}
 	
 	private static void loadEvents() {
@@ -183,19 +216,9 @@ public class Datastore {
 		newFile.renameTo(oldFile);
 	}
 	
+	/*/
 	private static long getCacheTime() {
 		return System.currentTimeMillis() - (7L * 24 * 60 * 60 * 1000);
-	}
-
-	/*/
-	private static void updateShipDatabase(File file) {
-		try {
-			Reader reader = loadFromUrl(URL_SHIPCACHE);
-			Writer writer = new FileWriter(file);
-			copy(reader, writer);
-		} catch (IOException cause) {
-			logger.log(Level.WARNING, "Error occurred while updating ship database", cause);
-		}
 	}
 	//*/
 
@@ -210,9 +233,14 @@ public class Datastore {
 				admiral.validateShips();
 				admiral.activateShips();
 			}
-			// Download icons for ships owned by the user
-			for (Ship ship : getAllShips().values()) {
-				if (ship.isOwned()) SwingWorkerExecutor.getInstance().downloadIcon(ship); 
+			if (isIconCacheStale()) {
+				// Download icons for ships owned by the user
+				// As there can potentially be hundreds of icons to download,
+				// the update is done in the background. 
+				// As a result, the UI may not always be up to date for the current run.
+				for (Ship ship : getAllShips().values()) {
+					if (ship.isOwned()) SwingWorkerExecutor.getInstance().downloadIcon(ship); 
+				}
 			}
 		}
 		return ADMIRALS;
@@ -236,6 +264,49 @@ public class Datastore {
 
 	public static void saveAdmirals(File file, Admirals admirals) throws JAXBException {
 		admiralsMarshaller.marshal(admirals, file);
+	}
+	
+	public static boolean exportShips(File file, Collection<Ship> ships) {
+		try {
+			PrintStream out = new PrintStream(file);
+			for(Ship ship : ships) {
+				out.println(ship.getDisplayName());
+			}
+			out.flush();
+			out.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public static int importShips(File file, Admiral admiral) {
+		int counter = 0;
+		try {
+			FileReader fileReader = new FileReader(file);
+			BufferedReader reader = new BufferedReader(fileReader);
+			
+			SortedMap<String, Ship> ships = getAllShips();
+			String line = reader.readLine();
+			while (line != null) {
+				line = line.trim();
+				Ship ship = ships.get(line.toLowerCase());
+			    if (ship != null) {
+			    	admiral.addActive(line);
+			    	counter++;
+			    }
+			    line = reader.readLine();
+			}
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return -1;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return -1;
+		}
+		return counter;
 	}
 
 	private static void init() {
@@ -261,14 +332,20 @@ public class Datastore {
 		return null;
 	}
 
-	/*/
-	private static void copy(Reader input, Writer output) throws IOException {
+	public static boolean isFresh(File file) {
+		return Globals.isTimestampFresh(file.lastModified());
+	}
+	
+	public static boolean isStale(File file) {
+		return Globals.isTimestampStale(file.lastModified());
+	}
+	
+	public static void copy(Reader input, Writer output) throws IOException {
 		char[] buffer = new char[1024];
 		int n = 0;
 		while (-1 != (n = input.read(buffer))) {
 			output.write(buffer, 0, n);
 		}
 	}
-	//*/
 
 }

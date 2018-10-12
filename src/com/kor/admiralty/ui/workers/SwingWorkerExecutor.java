@@ -1,5 +1,6 @@
 package com.kor.admiralty.ui.workers;
 
+import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -33,6 +34,10 @@ public class SwingWorkerExecutor {
 	 */
 	public void execute(SwingWorker<?, ?> worker) {
 		workerThreadPool.submit(worker);
+	}
+	
+	public void downloadShipList(File file) {
+		execute(new ShipDataDownloader(file));
 	}
 	
 	public void downloadIcon(Ship ship) {

@@ -137,6 +137,8 @@ public class Strings {
 		public static final String LabelFaction = "Faction: ";
 		public static final String LabelShipPriority = "Prioritize: ";
 		public static final String LabelShip = "Ship";
+		public static final String LabelExportShips = "Export...";
+		public static final String LabelImportShips = "Import...";
 		public static final String LabelActiveShips = "Active Ships";
 		public static final String LabelMaintenanceShips = "Maintenance Ships";
 		public static final String LabelOneTimeShips = "One-Time Ships";
@@ -156,6 +158,8 @@ public class Strings {
 		public static final String DescNumAssignments = "Set the number of assignments to plan for";
 		public static final String DescAddActiveShips = "Add active ship(s) to this admiral's roster";
 		public static final String DescRemoveActiveShips = "Remove active ship(s) from this admiral's roster";
+		public static final String DescExportShips = "Export this admiral's ships to a file";
+		public static final String DescImportShips = "Add ships from an exported ship list to this admiral's ship roster";
 		public static final String DescAddOneTimeShips = "Add one-time ship(s) to this admiral's roster";
 		public static final String DescRemoveOneTimeShips = "Remove one-time ship(s) from this admiral's roster";
 		public static final String DescAllMaintenanceToActive = "Move all maintenance ships to the active list";
@@ -170,10 +174,19 @@ public class Strings {
 		public static final String DescDeployShips = "Deploy the ships";
 		public static final String MsgNoSolution = "<html><p>Sorry, unable to find a solution for this set of assignments as they may be too similar.</p><p>Please try again with either a smaller set of assignments or use different assignments.</p></html>";
 		public static final String MsgNoShipsToDeploy = "No ships to assign.";
+		public static final String MsgExportSuccessful = "Ships have been exported to %s";
+		public static final String MsgExportFailed = "Unable to export ships to %s";
+		public static final String MsgImportSuccessful = "%d ships have been imported from %s";
+		public static final String MsgNoImport = "No ships were imported from %s";
+		public static final String MsgImportFailed = "Unable to import ships from %s";
 		public static final String TitleAddActiveShips = "Add Active Ships";
 		public static final String TitleRemoveActiveShips = "Remove Active Ships";
+		public static final String TitleExportShips = "Export ships to text file";
+		public static final String TitleImportShips = "Import ships from text file";
 		public static final String TitleAddOneTimeShips = "Add One-Time Ships";
 		public static final String TitleRemoveOneTimeShips = "Remove Active Ships";
+		public static final String TitleExportShip = "Export Ships";
+		public static final String TitleImportShip = "Import Ships";
 	}
 	
 	public final class AssignmentPanel {

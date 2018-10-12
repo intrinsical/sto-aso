@@ -47,6 +47,7 @@ import com.kor.admiralty.ui.renderers.ShipCellRenderer;
 import com.kor.admiralty.ui.renderers.StarshipTraitCellRenderer;
 import com.kor.admiralty.ui.resources.Images;
 import com.kor.admiralty.ui.resources.Swing;
+import com.kor.admiralty.ui.util.TextFileFilter;
 
 import static com.kor.admiralty.ui.resources.Strings.Empty;
 import static com.kor.admiralty.ui.resources.Strings.AdmiralPanel.*;
@@ -57,12 +58,14 @@ import java.awt.Insets;
 import java.beans.Beans;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
@@ -104,6 +107,8 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 	protected JLabel lblOnetimeShips;
 	protected JButton btnAllActive;
 	protected JButton btnActive;
+	protected JButton btnExportShips;
+	protected JButton btnImportShips;
 	protected JButton btnMaintenance;
 	protected JButton btnAllMaintenance;
 	protected JButton btnAddOneTime;
@@ -127,6 +132,8 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 	};
 	private final Action actionAddShip = new AddActiveShipAction();
 	private final Action actionRemoveShip = new RemoveActiveShipAction();
+	private final Action actionExportShips = new ExportShipsAction();
+	private final Action actionImportShips = new ImportShipsAction();
 	private final Action actionAddOneTimeShip = new AddOneTimeShipAction();
 	private final Action actionRemoveOneTimeShip = new RemoveOneTimeShipAction();
 	private final Action actionAllMaintenanceToActive = new AllMaintenanceToActiveAction();
@@ -293,9 +300,9 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		pnlPrimaryShips.add(pnlButtons, gbc_pnlButtons);
 		GridBagLayout gbl_pnlButtons = new GridBagLayout();
 		gbl_pnlButtons.columnWidths = new int[] { 0 };
-		gbl_pnlButtons.rowHeights = new int[] { 0, 0 };
+		gbl_pnlButtons.rowHeights = new int[] { 0, 0, 0, 0 };
 		gbl_pnlButtons.columnWeights = new double[] { 0.0 };
-		gbl_pnlButtons.rowWeights = new double[] { 0.0, 0.0 };
+		gbl_pnlButtons.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0 };
 		pnlButtons.setLayout(gbl_pnlButtons);
 
 		JButton btnAddShip = new JButton(actionAddShip);
@@ -308,6 +315,7 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 
 		JButton btnRemoveShip = new JButton(actionRemoveShip);
 		GridBagConstraints gbc_btnRemoveShip = new GridBagConstraints();
+		gbc_btnRemoveShip.insets = new Insets(0, 0, 5, 0);
 		gbc_btnRemoveShip.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnRemoveShip.gridx = 0;
 		gbc_btnRemoveShip.gridy = 1;
@@ -505,6 +513,21 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 		gbc_pnlButtons.fill = GridBagConstraints.BOTH;
 		gbc_pnlButtons.gridx = 1;
 		gbc_pnlButtons.gridy = 3;
+		
+		btnExportShips = new JButton(actionExportShips);
+		GridBagConstraints gbc_btnExportShips = new GridBagConstraints();
+		gbc_btnExportShips.insets = new Insets(0, 0, 5, 0);
+		gbc_btnExportShips.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnExportShips.gridx = 0;
+		gbc_btnExportShips.gridy = 2;
+		pnlButtons.add(btnExportShips, gbc_btnExportShips);
+		
+		btnImportShips = new JButton(actionImportShips);
+		GridBagConstraints gbc_btnImportShips = new GridBagConstraints();
+		gbc_btnImportShips.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnImportShips.gridx = 0;
+		gbc_btnImportShips.gridy = 3;
+		pnlButtons.add(btnImportShips, gbc_btnImportShips);
 		pnlOneTime.add(lblEmpty, gbc_panel2);
 
 		JPanel pnlAssignmentsTab = new JPanel();
@@ -860,6 +883,77 @@ public class AdmiralPanel extends JPanel implements PropertyChangeListener {
 			List<Ship> ships = ShipSelectionPanel.dialog(window, inputShips, TitleRemoveActiveShips);
 			if (!ships.isEmpty()) {
 				admiral.removeActiveOrMaintenanceShips(ships);
+			}
+		}
+	}
+
+	private class ExportShipsAction extends AbstractAction {
+		private static final long serialVersionUID = -7749618373959400163L;
+
+		public ExportShipsAction() {
+			super(LabelExportShips);
+			putValue(SHORT_DESCRIPTION, DescExportShips);
+		}
+
+		public void actionPerformed(ActionEvent e) {
+			Window window = SwingUtilities.getWindowAncestor((Component) e.getSource());
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setDialogTitle(TitleExportShips);
+			fileChooser.setDialogType(JFileChooser.SAVE_DIALOG);
+			fileChooser.setFileFilter(TextFileFilter.SINGLETON);
+			fileChooser.setCurrentDirectory(Datastore.getCurrentFolder());
+			fileChooser.setSelectedFile(new File(admiral.getName() + ".txt"));
+			int result = fileChooser.showDialog(window, LabelExportShips);
+			if (result == JFileChooser.APPROVE_OPTION) {
+				File file = fileChooser.getSelectedFile();
+				String filename = file.getName();
+				Set<Ship> ships = new TreeSet<Ship>();
+				ships.addAll(admiral.getActiveShips());
+				ships.addAll(admiral.getMaintenanceShips());
+				boolean success = Datastore.exportShips(file, ships);
+				if (success) {
+					JOptionPane.showMessageDialog(AdmiraltyConsole.CONSOLE, String.format(MsgExportSuccessful, filename), TitleExportShips, JOptionPane.INFORMATION_MESSAGE, null);
+				}
+				else {
+					JOptionPane.showMessageDialog(AdmiraltyConsole.CONSOLE, String.format(MsgExportFailed, filename), TitleExportShips, JOptionPane.ERROR_MESSAGE, null);
+				}
+			}
+		}
+	}
+
+	private class ImportShipsAction extends AbstractAction {
+		private static final long serialVersionUID = 8306416465068232284L;
+
+		public ImportShipsAction() {
+			super(LabelImportShips);
+			putValue(SHORT_DESCRIPTION, DescImportShips);
+		}
+
+		public void actionPerformed(ActionEvent e) {
+			Window window = SwingUtilities.getWindowAncestor((Component) e.getSource());
+			JFileChooser fileChooser = new JFileChooser();
+			fileChooser.setDialogTitle(TitleImportShips);
+			fileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
+			fileChooser.setFileFilter(TextFileFilter.SINGLETON);
+			fileChooser.setCurrentDirectory(Datastore.getCurrentFolder());
+			File testFile = new File(admiral.getName() + ".txt");
+			if (testFile.exists()) {
+				fileChooser.setSelectedFile(testFile);
+			}
+			int result = fileChooser.showDialog(window, LabelImportShips);
+			if (result == JFileChooser.APPROVE_OPTION) {
+				File file = fileChooser.getSelectedFile();
+				String filename = file.getName();
+				int numShips = Datastore.importShips(file, admiral);
+				if (numShips < 0) {
+					JOptionPane.showMessageDialog(AdmiraltyConsole.CONSOLE, String.format(MsgImportFailed, filename), TitleImportShips, JOptionPane.ERROR_MESSAGE, null);
+				}
+				else if (numShips == 0) {
+					JOptionPane.showMessageDialog(AdmiraltyConsole.CONSOLE, String.format(MsgNoImport, filename), TitleImportShips, JOptionPane.INFORMATION_MESSAGE, null);
+				}
+				else {
+					JOptionPane.showMessageDialog(AdmiraltyConsole.CONSOLE, String.format(MsgImportSuccessful, numShips, filename), TitleImportShips, JOptionPane.INFORMATION_MESSAGE, null);
+				}
 			}
 		}
 	}

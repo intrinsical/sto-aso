@@ -31,6 +31,8 @@ public class Globals {
 	public static final StyleSheet STYLESHEET_TRAIT = customStyleSheet(CSS_TRAIT);
 	public static final int MAX_ASSIGNMENTS = 3;
 	public static final int SOLVER_DEPTH = 10;
+	public static final String URL_UPDATE = "https://github.com/intrinsical/sto-aso/raw/master/%s";
+	public static final long UPDATE_INTERVAL = 7L * 24L * 60L * 60L * 1000L; // Check for updates every 7 days 
 	public static boolean DEBUG;
 
 	static {
@@ -46,6 +48,14 @@ public class Globals {
 		stylesheet.addStyleSheet(STYLESHEET_GLOBAL);
 		stylesheet.addRule(css);
 		return stylesheet;
+	}
+	
+	public static boolean isTimestampFresh(long time) {
+		return time > (System.currentTimeMillis() - UPDATE_INTERVAL);
+	}
+	
+	public static boolean isTimestampStale(long time) {
+		return !isTimestampFresh(time);
 	}
 	
 }

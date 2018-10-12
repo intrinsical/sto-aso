@@ -10,13 +10,14 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.SwingWorker;
 
+import com.kor.admiralty.Globals;
 import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.io.Datastore;
 import com.kor.admiralty.ui.resources.ActualShipIconFactory;
 
 public class ShipIconLoader extends SwingWorker<ImageIcon, ImageIcon> {
 
-	protected static final String URL_WEBICONS = "https://github.com/intrinsical/sto-aso/raw/master/icons/%s";
+	protected static final String URL_WEBICONS = String.format(Globals.URL_UPDATE, "icons/%s");
 	protected static final Logger LOGGER = Logger.getGlobal();
 	protected static final Component COMPONENT = new Component() { private static final long serialVersionUID = -8700758873181010251L; };
 	protected static final MediaTracker TRACKER = new MediaTracker(COMPONENT);
