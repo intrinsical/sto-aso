@@ -6,6 +6,18 @@
 
 Star Trek Online is constantly adding new ships to the game, and I don't have access to every ship in the game. I depend on you, the STO community, to provide me with information on the newest ships. 
 
+Specifically, information is currently required for the following ships:
+
+ * Narendra Support Cruiser (T6)
+ * Ambassador Fleet Support Cruiser (T6)
+ * Vor'ral Support Battlecruiser (T6)
+ * Fleet Support Battlecruiser (T6)
+ * Hur'q Assembly Multi-Mission Science Vessel (T6)
+ * Hur'q Ravager Escort Carrier (T6)
+ * Europa Heavy Battlecruiser (T6)
+ * Fleet Heavy Battlecruiser (T6)
+ * Walker Prototype Light Exploration Cruiser
+
 **<span style="font-size:larger;">[Click here to submit admiralty ship information](https://github.com/intrinsical/sto-aso/issues/new?template=submit-admiralty-ship-information.md&labels=ship+info&title=New+admiralty+ship)</span>**
 
 ## Help : Add support for tracking ship maintenance
