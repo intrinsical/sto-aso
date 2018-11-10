@@ -1,6 +1,7 @@
 Faction,Tier,Name,Rarity,Type,Eng,Tac,Sci,Bonus,Trait
 Federation,0,Class F Shuttle,Common,Smc,2,2,2,-25% Maintenance per ANY Ship (Not Small Craft),
 Federation,0,Danube Runabout,Common,Smc,3,2,1,-25% Maintenance per ANY Ship (Not Small Craft),
+Federation,0,Federation Shuttlecraft,Common,Smc,2,2,2,-25% Maintenance per ANY Ship (Not Small Craft),
 Federation,0,Type 10 Shuttle,Common,Smc,2,2,2,5x Critical Rating from ALL Stats (Not Small Craft),
 Federation,0,Type 8 Shuttle,Common,Smc,4,1,1,+10 ALL Stats per ANY Ship (Not Small Craft),
 Federation,0,Captain's Yacht,Rare,Smc,4,3,3,5x Critical Rating from ALL Stats,
@@ -13,6 +14,7 @@ Federation,0,Type 7 Shuttle,Rare,Smc,5,3,2,5x Critical Rating from ALL Stats,
 Federation,0,Yellowstone Runabout,Rare,Smc,3,4,3,5x Critical Rating from ALL Stats,
 Federation,0,Aeon Timeship,Ultra Rare,Smc,3,4,7,-25% Maintenance per ANY Ship (Not Small Craft),
 Federation,1,Light Cruiser,Common,Eng,5,5,5,2x Critical Rating from Events,
+Federation,1,Malachowski Light Cruiser,Common,Eng,6,4,5,2x Critical Rating from Events,
 Federation,1,Utility Cruiser,Common,Eng,6,5,4,2x Critical Rating from Events,
 Federation,1,TOS Light Cruiser,Rare,Eng,6,6,6,2.5x Critical Rating from ENG,
 Federation,1,Oberth Light Science Vessel,Rare,Sci,4,4,10,2.5x Critical Rating from SCI,
@@ -20,32 +22,41 @@ Federation,1,Andorian Light Escort,Rare,Tac,4,10,4,2.5x Critical Rating from TAC
 Federation,1,Blockade Runner Escort,Rare,Tac,6,7,5,1.5x Critical Rating from TAC and ENG,
 Federation,1,NX Light Escort,Rare,Tac,5,8,5,1.5x Critical Rating from TAC and SCI,
 Federation,2,Cruiser,Common,Eng,14,8,8,+8 ENG per SciShip or TacShip,
-Federation,2,Cruiser Refit,Rare,Eng,18,9,9,1.5x Critical Rating from SCI or TAC,
 Federation,2,Science Vessel,Common,Sci,8,8,14,+8 SCI per EngShip or TacShip,
+Federation,2,Escort,Common,Tac,8,14,8,+8 TAC per EngShip or SciShip,
+Federation,2,Cruiser Refit,Rare,Eng,18,9,9,1.5x Critical Rating from SCI or TAC,
 Federation,2,Science Vessel Refit,Rare,Sci,9,9,18,1.5x Critical Rating from ENG or TAC,
 Federation,2,Temporal Science Vessel,Rare,Sci,6,11,19,Ignores +/- SCI from Events,
-Federation,2,Escort,Common,Tac,8,14,8,+8 TAC per EngShip or SciShip,
 Federation,2,Escort Refit,Rare,Tac,9,18,9,1.5x Critical Rating from ENG or SCI,
 Federation,3,Heavy Cruiser,Common,Eng,23,11,11,2.5x Critical Rating from ENG,
 Federation,3,Support Cruiser,Common,Eng,22,10,13,1.5x Critical Rating from ENG and SCI,
+Federation,3,Research Science Vessel,Common,Sci,11,11,23,2.5x Critical Rating from SCI,
+Federation,3,Heavy Escort,Common,Tac,11,23,11,2.5x Critical Rating from TAC,
 Federation,3,Advanced Heavy Cruiser,Rare,Eng,26,16,12,1.5x Critical Rating from TAC and ENG,
 Federation,3,Heavy Cruiser Refit,Rare,Eng,28,13,13,Ignore +/- ENG from Events,
-Federation,3,Research Science Vessel,Common,Sci,11,11,23,2.5x Critical Rating from SCI,
 Federation,3,Advanced Science Vessel,Rare,Sci,13,13,28,Ignore +/- SCI from Events,
-Federation,3,Heavy Escort,Common,Tac,11,23,11,2.5x Critical Rating from TAC,
 Federation,3,Heavy Escort Refit,Rare,Tac,13,28,13,Ignore +/- TAC from Events,
 Federation,3,Temporal Escort,Rare,Tac,9,30,15,Ignores +/- TAC from Events,
 Federation,4,Exploration Cruiser,Common,Eng,36,12,12,+8 ENG per SciShip or TacShip,
+Federation,4,Prototype Light Exploration Cruiser,Common,Eng,44,14,14,+10 ENG per EngShip,
+Federation,4,Long Range Science Vessel,Common,Sci,12,12,36,+8 SCI per EngShip or TacShip,
+Federation,4,Tactical Escort,Common,Tac,12,36,12,+8 TAC per EngShip or SciShip,
 Federation,4,Exploration Cruiser Refit,Rare,Eng,42,15,15,1.5x Critical Rating from TAC and SCI,
 Federation,4,Temporal Cruiser,Rare,Eng,38,20,14,Ignores +/- ENG from Events,
-Federation,4,Long Range Science Vessel,Common,Sci,12,12,36,+8 SCI per EngShip or TacShip,
 Federation,4,Long Range Science Vessel Refit,Rare,Sci,15,15,42,1.5x Critical Rating from ENG and TAC,
-Federation,4,Tactical Escort,Common,Tac,12,36,12,+8 TAC per EngShip or SciShip,
 Federation,4,Tactical Escort Refit,Rare,Tac,15,42,15,1.5x Critical Rating from ENG and SCI,
 Federation,5,Assault Cruiser,Common,Eng,47,17,11,+10 TAC per TacShip,
 Federation,5,Heavy Cruiser Retrofit,Common,Eng,50,14,11,-10% Maintenance per SciShip or TacShip,
 Federation,5,Odyssey Star Cruiser,Common,Eng,46,13,16,-5% Maintenance per Ship,
 Federation,5,Star Cruiser,Common,Eng,47,11,17,+10 SCI per SciShip,
+Federation,5,Deep Space Science Vessel,Common,Sci,17,11,47,+10 ENG per EngShip,
+Federation,5,Reconnaissance Science Vessel,Common,Sci,11,17,47,+10 TAC per TacShip,
+Federation,5,Research Science Vessel Retrofit,Common,Sci,12,12,51,+10 ENG and TAC when Alone,
+Federation,5,Science Vessel Retrofit,Common,Sci,12,16,47,+5 ENG and TAC per EngShip or TacShip,
+Federation,5,Advanced Escort,Common,Tac,11,47,17,+10 SCI per SciShip,
+Federation,5,Aquarius Light Escort,Common,Tac,16,43,16,1.5x Critical Rating from ENG and SCI,
+Federation,5,Escort Retrofit,Common,Tac,13,49,13,1.5x Critical Rating from ENG and SCI,
+Federation,5,Patrol Escort,Common,Tac,17,47,11,+10 ENG per EngShip,
 Federation,5,Advanced Heavy Cruiser Retrofit,Rare,Eng,52,19,19,+5 SCI and TAC per SciShip or TacShip,
 Federation,5,Assault Cruiser Refit,Rare,Eng,52,23,15,+8 ENG per TacShip or SciShip,
 Federation,5,Battle Cruiser,Rare,Eng,36,42,12,+10 SCI per SciShip,
@@ -53,9 +64,28 @@ Federation,5,Dreadnought Cruiser,Rare,Eng,52,20,18,+10 SCI per SciShip,
 Federation,5,Exploration Cruiser Retrofit,Rare,Eng,55,15,20,+20 SCI and TAC when Alone,
 Federation,5,Support Cruiser Retrofit,Rare,Eng,52,17,21,-10% Maintenance per SciShip or TacShip,
 Federation,5,Temporal Battlecruiser,Rare,Eng,42,31,17,x2.5 BONUS from SCI,
+Federation,5,Advanced Research Vessel Retrofit,Rare,Sci,16,23,51,+8 TAC per EngShip or TacShip,
+Federation,5,Caitan Atrox Carrier,Rare,Sci,26,14,50,+20 SCI and TAC when Alone,
+Federation,5,D'Kyr Science Vessel,Rare,Sci,23,16,51,+8 ENG per EngShip or TacShip,
+Federation,5,Long Range Science Vessel Retrofit,Rare,Sci,20,15,55,+5 TAC and ENG per EngShip or TacShip,
+Federation,5,Solanae Dyson Science Destroyer,Rare,Sci,12,28,50,Ignores +/- SCI from Events,
+Federation,5,Blockade Runner Escort Retrofit,Rare,Tac,26,50,14,-5% Maintenance per Ship,
+Federation,5,Chimera Heavy Destroyer,Rare,Tac,30,48,12,+8 SCI per SciShip or EngShip,
+Federation,5,Heavy Escort Carrier,Rare,Tac,20,56,14,+20 ENG and SCI when Alone,
+Federation,5,Multi-Vector Advanced Escort,Rare,Tac,18,50,22,+15 All Stats when Alone,
+Federation,5,Patrol Escort Refit,Rare,Tac,22,53,15,+10 TAC per TacShip,
+Federation,5,Tactical Escort Retrofit,Rare,Tac,20,55,15,+5 ENG and SCI per SciShip or EngShip,
+Federation,5,Wells Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
+Federation,5,Mobius Temporal Destroyer,Ultra Rare,Tac,23,59,23,+20 TAC and ENG when Alone,
 Federation,5,Mirror Assault Cruiser,Uncommon,Eng,50,12,21,+10 SCI per TacShip,
 Federation,5,Mirror Heavy Cruiser Retrofit,Uncommon,Eng,50,19,14,1.5x Critical Rating from SCI and TAC,
 Federation,5,Mirror Star Cruiser,Uncommon,Eng,50,21,12,+10 TAC per SciShip,
+Federation,5,Mirror Deep Space Science Vessel,Uncommon,Sci,12,21,50,+10 ENG per EngShip,
+Federation,5,Mirror Reconnaissance Science Vessel,Uncommon,Sci,21,12,50,+10 TAC per TacShip,
+Federation,5,Mirror Science Vessel Retrofit,Uncommon,Sci,15,18,50,+5 TAC and ENG per TacShip or EngShip,
+Federation,5,Mirror Advanced Escort,Uncommon,Tac,12,50,21,+10 ENG per EngShip,
+Federation,5,Mirror Escort Retrofit,Uncommon,Tac,17,52,14,+5 SCI and ENG per SciShip or TacShip,
+Federation,5,Mirror Patrol Escort,Uncommon,Tac,21,50,12,+10 SCI per SciShip,
 Federation,5,Fleet Advanced Heavy Cruiser Retrofit,Very Rare,Eng,62,22,14,+10 ENG per SciShip,
 Federation,5,Fleet Assault Cruiser Refit,Very Rare,Eng,60,26,12,+10 SCI per TacShip,
 Federation,5,Fleet Battle Cruiser,Very Rare,Eng,38,46,14,+10 ENG per EngShip,
@@ -67,19 +97,6 @@ Federation,5,Fleet Support Cruiser Retrofit,Very Rare,Eng,59,21,18,-10% Maintena
 Federation,5,Odyssey Operations Cruiser,Very Rare,Eng,58,20,20,+35 ENG when Alone,
 Federation,5,Odyssey Science Cruiser,Very Rare,Eng,54,20,24,+35 SCI when Alone,
 Federation,5,Odyssey Tactical Cruiser,Very Rare,Eng,54,24,20,+35 TAC when Alone,
-Federation,5,Deep Space Science Vessel,Common,Sci,17,11,47,+10 ENG per EngShip,
-Federation,5,Reconnaissance Science Vessel,Common,Sci,11,17,47,+10 TAC per TacShip,
-Federation,5,Research Science Vessel Retrofit,Common,Sci,12,12,51,+10 ENG and TAC when Alone,
-Federation,5,Science Vessel Retrofit,Common,Sci,12,16,47,+5 ENG and TAC per EngShip or TacShip,
-Federation,5,Advanced Research Vessel Retrofit,Rare,Sci,16,23,51,+8 TAC per EngShip or TacShip,
-Federation,5,Caitan Atrox Carrier,Rare,Sci,26,14,50,+20 SCI and TAC when Alone,
-Federation,5,D'Kyr Science Vessel,Rare,Sci,23,16,51,+8 ENG per EngShip or TacShip,
-Federation,5,Long Range Science Vessel Retrofit,Rare,Sci,20,15,55,+5 TAC and ENG per EngShip or TacShip,
-Federation,5,Solanae Dyson Science Destroyer,Rare,Sci,12,28,50,Ignores +/- SCI from Events,
-Federation,5,Wells Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
-Federation,5,Mirror Deep Space Science Vessel,Uncommon,Sci,12,21,50,+10 ENG per EngShip,
-Federation,5,Mirror Reconnaissance Science Vessel,Uncommon,Sci,21,12,50,+10 TAC per TacShip,
-Federation,5,Mirror Science Vessel Retrofit,Uncommon,Sci,15,18,50,+5 TAC and ENG per TacShip or EngShip,
 Federation,5,Dyson Reconnaissance Science Destroyer,Very Rare,Sci,12,38,48,+35 TAC when Alone,
 Federation,5,Dyson Strategic Science Destroyer,Very Rare,Sci,18,32,48,+35 ENG when Alone,
 Federation,5,Dyson Surveillance Science Destroyer,Very Rare,Sci,12,32,54,+35 SCI when Alone,
@@ -93,20 +110,6 @@ Federation,5,Fleet Science Vessel Retrofit,Very Rare,Sci,15,25,58,2.5x Critical 
 Federation,5,Multi-Mission Reconnaissance Explorer,Very Rare,Sci,20,23,55,+35 TAC when Alone,
 Federation,5,Multi-Mission Strategic Explorer,Very Rare,Sci,24,19,55,+35 ENG when Alone,
 Federation,5,Multi-Mission Surveillance Explorer,Very Rare,Sci,20,19,59,+35 SCI when Alone,
-Federation,5,Advanced Escort,Common,Tac,11,47,17,+10 SCI per SciShip,
-Federation,5,Aquarius Light Escort,Common,Tac,16,43,16,1.5x Critical Rating from ENG and SCI,
-Federation,5,Escort Retrofit,Common,Tac,13,49,13,1.5x Critical Rating from ENG and SCI,
-Federation,5,Patrol Escort,Common,Tac,17,47,11,+10 ENG per EngShip,
-Federation,5,Blockade Runner Escort Retrofit,Rare,Tac,26,50,14,-5% Maintenance per Ship,
-Federation,5,Chimera Heavy Destroyer,Rare,Tac,30,48,12,+8 SCI per SciShip or EngShip,
-Federation,5,Heavy Escort Carrier,Rare,Tac,20,56,14,+20 ENG and SCI when Alone,
-Federation,5,Multi-Vector Advanced Escort,Rare,Tac,18,50,22,+15 All Stats when Alone,
-Federation,5,Patrol Escort Refit,Rare,Tac,22,53,15,+10 TAC per TacShip,
-Federation,5,Tactical Escort Retrofit,Rare,Tac,20,55,15,+5 ENG and SCI per SciShip or EngShip,
-Federation,5,Mobius Temporal Destroyer,Ultra Rare,Tac,23,59,23,+20 TAC and ENG when Alone,
-Federation,5,Mirror Advanced Escort,Uncommon,Tac,12,50,21,+10 ENG per EngShip,
-Federation,5,Mirror Escort Retrofit,Uncommon,Tac,17,52,14,+5 SCI and ENG per SciShip or TacShip,
-Federation,5,Mirror Patrol Escort,Uncommon,Tac,21,50,12,+10 SCI per SciShip,
 Federation,5,Andorian Charal Escort,Very Rare,Tac,24,54,20,+35 ENG when Alone,
 Federation,5,Andorian Khyzon Escort,Very Rare,Tac,20,54,24,+35 SCI when Alone,
 Federation,5,Andorian Kumari Escort,Very Rare,Tac,20,58,20,+35 TAC when Alone,
@@ -125,17 +128,38 @@ Federation,6,Dreadnought Cruiser (T6),Rare,Eng,61,25,22,+15 All Stats when Alone
 Federation,6,Eclipse Intel Cruiser (T6),Rare,Eng,60,22,26,+10 SCI per EngShip,Battle Ready
 Federation,6,Exploration Cruiser (T6),Rare,Eng,70,19,19,+8 SCI and TAC per TacShip,Explosive Polarity Shift
 Federation,6,Guardian Cruiser (T6),Rare,Eng,66,21,21,2.5x Critical Rating from TAC,Desperate Repairs
+Federation,6,Heavy Battlecruiser [T6],Rare,Eng,58,26,24,+8 ENG and SCI per TacShip,Reactive Reconstruction
 Federation,6,Intel Assault Cruiser (T6),Rare,Eng,62,30,16,+20 TAC and ENG when Alone,Specialist Knowledge
 Federation,6,Mirror Guardian Cruiser (T6),Rare,Eng,64,23,21,2.5x Critical Rating from SCI,Desperate Repairs
+Federation,6,Support Cruiser [T6],Rare,Eng,62,21,25,-25% Maintenance per EngShip,History Will Remember
 Federation,6,Tellarite Pralim Flight-Deck Assault Cruiser (T6),Rare,Eng,53,38,17,+10 ENG per TacShip,Majority – Minority
 Federation,6,Temporal Battlecruiser (T6),Rare,Eng,47,44,17,2x Critical Rating from Events,Retaliation
 Federation,6,Temporal Cruiser (T6),Rare,Eng,56,26,26,+10 ENG per SciShip,Shield Overload
+Federation,6,Advanced Research Vessel (T6),Rare,Sci,31,20,57,+8 SCI per EngShip or TacShip,Tachyon Dispersal
+Federation,6,Carrier (T6),Rare,Sci,34,29,45,1.5x Critical Rating from TAC and ENG,Insult To Injury
+Federation,6,Experimental Science Vessel (T6),Rare,Sci,22,28,58,+8 SCI per Any Ship,Radiant Nanite Cloud
+Federation,6,Long Range Science Vessel (T6),Rare,Sci,21,21,66,2.5x Critical Rating from SCI,Ablative Field Projector
+Federation,6,Pathfinder Long Range Science Vessel (T6),Rare,Sci,21,21,66,2.5x Critical Rating from SCI,Ablative Field Projector
+Federation,6,Scryer Intel Science Vessel (T6),Rare,Sci,26,22,60,+10 TAC per SciShip,Emitter Synergy
+Federation,6,Temporal Science Vessel (T6),Rare,Sci,22,36,50,+10 SCI per EngShip,Improved Polarize Hull
+Federation,6,Advanced Escort (T6),Rare,Tac,16,68,24,+10 TAC per EngShip,Numerical Superiority
+Federation,6,Caitian Shikaris Escort (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
+Federation,6,Heavy Destroyer (T6),Rare,Tac,35,57,16,-25% Maintenance per SciShip,Weapon System Synergy
+Federation,6,Heavy Escort Carrier (T6),Rare,Tac,25,65,18,+8 SCI per EngShip or TacShip,Coordinated Assault
+Federation,6,Phantom Intel Escort (T6),Rare,Tac,26,60,22,+10 ENG per TacShip,Reciprocity
+Federation,6,Recon Destroyer [T6],Rare,Tac,19,52,37,+10 SCI per TacShip,Jubilant Cadence
+Federation,6,Tactical Escort (T6),Rare,Tac,23,69,16,2.5x Critical Rating from TAC,Withering Barrage
+Federation,6,Temporal Escort (T6),Rare,Tac,22,56,30,+10 TAC per EngShip,Designated Target
 Federation,6,Kelvin Timeline Heavy Command Cruiser (T6),Ultra Rare,Eng,62,36,28,+20 ENG and TAC when Alone,Down But Not Out
 Federation,6,Kelvin Timeline Intel Dreadnought Cruiser (T6),Ultra Rare,Eng,59,48,19,Ignores +/- TAC from Events,Target Rich Environment
 Federation,6,Prototype Dreadnought Cruiser [T6],Ultra Rare,Eng,62,44,20,+15 All Stats when Alone,Sif Shunt
 Federation,6,Temporal Heavy Dreadnought Cruiser (T6),Ultra Rare,Eng,57,42,27,+20 TAC and ENG when Alone,Repair Mode
 Federation,6,Temporal Light Cruiser (T6),Ultra Rare,Eng,58,37,30,Ignores +/- ENG from Events,Built To Last
 Federation,6,Walker-class Light Exploration Cruiser [T6],Ultra Rare,Eng,58,29,29,+8 SCI per SciShip or TacShip,Vulcan Hello
+Federation,6,Crossfield-class Science Vanguard [T6],Ultra Rare,Sci,20,47,59,2.5x Critical Rating from SCI,Black Alert
+Federation,6,Verne Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
+Federation,6,Klein Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
+Federation,6,NX Escort Refit (T6),Ultra Rare,Tac,42,63,21,+8 TAC per Any Ship,Preferential Targeting
 Federation,6,Concorde Command Battlecruiser (T6),Very Rare,Eng,77,20,20,+35 ENG when Alone,Improved Brace For Impact
 Federation,6,Daystrom Science Miracle Worker Cruiser (T6),Very Rare,Eng,57,26,34,'+20 TAC and ENG when Alone,Photonic Boarding Party
 Federation,6,Fleet Advanced Heavy Cruiser (T6),Very Rare,Eng,72,27,18,+8 TAC per Any Ship,
@@ -146,7 +170,9 @@ Federation,6,Fleet Dreadnought Cruiser (T6),Very Rare,Eng,66,27,24,2x Critical R
 Federation,6,Fleet Eclipse Intel Cruiser (T6),Very Rare,Eng,63,24,30,+8 SCI and TAC per EngShip,
 Federation,6,Fleet Exploration Cruiser (T6),Very Rare,Eng,73,22,22,2.5x Critical Rating from ENG,
 Federation,6,Fleet Guardian Cruiser (T6),Very Rare,Eng,69,24,24,Ignores +/- ENG from Events,
+Federation,6,Fleet Heavy Battlecruiser [T6],Very Rare,Eng,60,31,26,+8 ENG and SCI per EngShip,
 Federation,6,Fleet Intel Assault Cruiser (T6),Very Rare,Eng,64,37,16,+35 TAC when Alone,
+Federation,6,Fleet Support Cruiser [T6],Very Rare,Eng,67,23,27,-10% Maintenance per SciShip or TacShip,
 Federation,6,Fleet Tellarite Pralim Flight-Deck Assault Cruiser (T6),Very Rare,Eng,57,41,19,+8 ENG per TacShip or SciShip,
 Federation,6,Fleet Temporal Battlecruiser (T6),Very Rare,Eng,54,45,18,+35 TAC when Alone,
 Federation,6,Fleet Temporal Cruiser (T6),Very Rare,Eng,61,28,28,+8 ENG per SciShip or TacShip,
@@ -157,15 +183,6 @@ Federation,6,Science Star Cruiser (T6),Very Rare,Eng,63,18,36,+10 SCI per EngShi
 Federation,6,Scott Operations Miracle Worker Cruiser (T6),Very Rare,Eng,65,26,26,+20 TAC and SCI when Alone,Stay At Your Posts
 Federation,6,Tactical Star Cruiser (T6),Very Rare,Eng,56,36,25,+10 TAC per SciShip,Super Charged Weapons
 Federation,6,Tucker Tactical Miracle Worker Cruiser (T6),Very Rare,Eng,57,34,26,+20 SCI and ENG when Alone,Redirecting Arrays
-Federation,6,Advanced Research Vessel (T6),Rare,Sci,31,20,57,+8 SCI per EngShip or TacShip,Tachyon Dispersal
-Federation,6,Carrier (T6),Rare,Sci,34,29,45,1.5x Critical Rating from TAC and ENG,Insult To Injury
-Federation,6,Experimental Science Vessel (T6),Rare,Sci,22,28,58,+8 SCI per Any Ship,Radiant Nanite Cloud
-Federation,6,Long Range Science Vessel (T6),Rare,Sci,21,21,66,2.5x Critical Rating from SCI,Ablative Field Projector
-Federation,6,Pathfinder Long Range Science Vessel (T6),Rare,Sci,21,21,66,2.5x Critical Rating from SCI,Ablative Field Projector
-Federation,6,Scryer Intel Science Vessel (T6),Rare,Sci,26,22,60,+10 TAC per SciShip,Emitter Synergy
-Federation,6,Temporal Science Vessel (T6),Rare,Sci,22,36,50,+10 SCI per EngShip,Improved Polarize Hull
-Federation,6,Crossfield-class Science Vanguard [T6],Ultra Rare,Sci,20,47,59,2.5x Critical Rating from SCI,Black Alert
-Federation,6,Verne Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
 Federation,6,Fleet Advanced Research Vessel (T6),Very Rare,Sci,39,20,58,2.5x Critical Rating from SCI,
 Federation,6,Fleet Carrier (T6),Very Rare,Sci,41,30,46,+8 SCI per EngShip or TacShip,
 Federation,6,Fleet Experimental Science Vessel (T6),Very Rare,Sci,24,31,62,Ignores +/- SCI from Events,
@@ -175,15 +192,6 @@ Federation,6,Fleet Temporal Science Vessel (T6),Very Rare,Sci,22,44,51,+8 SCI pe
 Federation,6,Multi-Mission Reconnaissance Explorer (T6),Very Rare,Sci,21,44,52,Ignores +/- TAC from Events,Heavy Tachyon Mine
 Federation,6,Multi-Mission Strategic Explorer (T6),Very Rare,Sci,32,39,46,Ignores +/- ENG from Events,Exotic Particle Shielding
 Federation,6,Multi-Mission Surveillance Explorer (T6),Very Rare,Sci,28,35,54,Ignores +/- SCI from Events,Charged Particle Reaction
-Federation,6,Advanced Escort (T6),Rare,Tac,16,68,24,+10 TAC per EngShip,Numerical Superiority
-Federation,6,Caitian Shikaris Escort (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
-Federation,6,Heavy Destroyer (T6),Rare,Tac,35,57,16,-25% Maintenance per SciShip,Weapon System Synergy
-Federation,6,Heavy Escort Carrier (T6),Rare,Tac,25,65,18,+8 SCI per EngShip or TacShip,Coordinated Assault
-Federation,6,Phantom Intel Escort (T6),Rare,Tac,26,60,22,+10 ENG per TacShip,Reciprocity
-Federation,6,Tactical Escort (T6),Rare,Tac,23,69,16,2.5x Critical Rating from TAC,Withering Barrage
-Federation,6,Temporal Escort (T6),Rare,Tac,22,56,30,+10 TAC per EngShip,Designated Target
-Federation,6,Klein Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
-Federation,6,NX Escort Refit (T6),Ultra Rare,Tac,42,63,21,+8 TAC per Any Ship,Preferential Targeting
 Federation,6,Ajax Pilot Escort (T6),Very Rare,Tac,26,66,25,+35 ENG when Alone,Structural Integrity Overcharge
 Federation,6,Andorian Chimesh Pilot Escort (T6),Very Rare,Tac,26,55,36,-25% Maintenance per SciShip,Improved Gravity Well
 Federation,6,Andorian Kuthar Pilot Escort (T6),Very Rare,Tac,36,55,26,-25% Maintenance per EngShip,Painful Memories
@@ -193,10 +201,17 @@ Federation,6,Fleet Caitian Shikaris Escort (T6),Very Rare,Tac,23,57,37,2.5x Crit
 Federation,6,Fleet Heavy Destroyer (T6),Very Rare,Tac,37,62,18,+8 SCI per Any Ship,
 Federation,6,Fleet Heavy Escort Carrier (T6),Very Rare,Tac,27,70,20,+5 SCI and ENG per EngShip and TacShip,
 Federation,6,Fleet Phantom Intel Escort (T6),Very Rare,Tac,30,63,24,+8 ENG and SCI per TacShip,
+Federation,6,Fleet Recon Destroyer [T6],Very Rare,Tac,20,58,39,+35 SCI when Alone,
 Federation,6,Fleet Tactical Escort (T6),Very Rare,Tac,25,74,18,Ignores +/- TAC from Events,
 Federation,6,Fleet Temporal Escort (T6),Very Rare,Tac,22,57,38,+8 TAC per EngShip or SciShip,
 Federation,6,Icarus Pilot Escort (T6),Very Rare,Tac,22,66,29,+35 SCI when Alone,Subwarp Sheath
 Federation,6,Mercury Pilot Escort (T6),Very Rare,Tac,22,70,25,+35 TAC when Alone,Stay On Target
+JemHadar,0,Jem'Hadar Fighter,Common,Smc,2,3,1,+10 ALL Stats per ANY Ship (Not Small Craft),
+JemHadar,5,Jem'Hadar Escort [T5-U],Common,Tac,23,42,10,1.5x Critical Rating from All Stats,
+JemHadar,6,Jem'Hadar Vanguard Dreadnought Cruiser [T6],Very Rare,Eng,60,34,23,2.5x Critical Rating from ENG,Team Synergy
+JemHadar,6,Jem'Hadar Vanguard Carrier [T6],Very Rare,Sci,20,34,63,2.5x Critical Rating from SCI,Dampen Energy Signatures
+JemHadar,6,Jem'Hadar Vanguard Heavy Raider [T6],Very Rare,Tac,30,47,40,Ignore +/- TAC from Events,Press the Advantage
+JemHadar,6,Jem'Hadar Vanguard Warship [T6],Very Rare,Tac,38,61,18,2.5x Critical Rating from TAC,Tricks of the Trade
 Klingon,0,Kivra Shuttle,Common,Smc,4,1,1,-25% Maintenance per ANY Ship (Not Small Craft),
 Klingon,0,Toron Shuttle,Common,Smc,2,2,2,-25% Maintenance per ANY Ship (Not Small Craft),
 Klingon,0,General's Chariot,Rare,Smc,4,3,3,5x Critical Rating from ALL Stats,
@@ -210,20 +225,20 @@ Klingon,2,Somraw Raptor,Common,Tac,10,12,8,+8 TAC per EngShip or SciShip,
 Klingon,2,Qaw'Dun Bird-of-Prey,Rare,Tac,12,12,12,1.25x Critical Rating from All Stats,
 Klingon,3,K't'inga Battle Cruiser,Common,Eng,22,13,10,2.5x Critical Rating from ENG,
 Klingon,3,Kamarag Battle Cruiser,Common,Eng,22,10,13,1.5x Critical Rating from ENG and SCI,
+Klingon,3,Norgh Bird-of-Prey,Common,Tac,15,15,15,2.5x Critical Rating from SCI,
+Klingon,3,Qorgh Raptor,Common,Tac,13,22,10,2.5x Critical Rating from TAC,
 Klingon,3,Dacoit Flight Deck Cruiser,Rare,Eng,29,11,14,Ignores +/- ENG from Events,
 Klingon,3,Koro't'inga Battle Cruiser,Rare,Eng,27,15,12,1.5x Critical Rating from ENG and TAC,
 Klingon,3,Phalanx Science Vessel,Rare,Sci,14,11,29,Ignores +/- SCI from Events,
-Klingon,3,Norgh Bird-of-Prey,Common,Tac,15,15,15,2.5x Critical Rating from SCI,
-Klingon,3,Qorgh Raptor,Common,Tac,13,22,10,2.5x Critical Rating from TAC,
 Klingon,3,Ning'Tao Bird-of-Prey,Rare,Tac,18,18,18,1.25x Critical Rating from All Stats,
 Klingon,3,SuQob Raptor,Rare,Tac,14,29,11,+5 ENG and SCI from Any Ship,
 Klingon,3,Vandal Destroyer,Rare,Tac,12,27,15,Ignores +/- TAC from Events,
 Klingon,4,Vor'cha Battle Cruiser,Common,Eng,28,18,14,+8 ENG per SciShip or TacShip,
+Klingon,4,Ki'tang Bird-of-Prey,Common,Tac,20,20,20,1.5x Critical Rating from TAC and SCI,
+Klingon,4,Pach Raptor,Common,Tac,18,28,14,+8 TAC per EngShip or SciShip,
 Klingon,4,Corsair Flight Deck Cruiser,Rare,Eng,32,24,16,+5 TAC and SCI per SciShip or EngShip,
 Klingon,4,Vor'Kang Battle Cruiser,Rare,Eng,35,21,16,-10% Maintenance per SciShip or TacShip,
 Klingon,4,Draguas Support Vessel,Rare,Sci,22,12,38,+8 SCI per EngShip or TacShip,
-Klingon,4,Ki'tang Bird-of-Prey,Common,Tac,20,20,20,1.5x Critical Rating from TAC and SCI,
-Klingon,4,Pach Raptor,Common,Tac,18,28,14,+8 TAC per EngShip or SciShip,
 Klingon,4,Ch'Tang Bird-of-Prey,Rare,Tac,24,24,24,1.5x Critical Rating from ENG and SCI,
 Klingon,4,Puyjaq Raptor,Rare,Tac,20,40,12,1.5x Critical Rating from ENG or TAC,
 Klingon,4,Scourge Destroyer,Rare,Tac,16,36,20,+8 TAC per SciShip or TacShip,
@@ -233,10 +248,28 @@ Klingon,5,K't'inga Battle Cruiser Retrofit,Common,Eng,37,22,16,+10 TAC per TacSh
 Klingon,5,Kamarag Battle Cruiser Retrofit,Common,Eng,32,26,17,+10 SCI per SciShip,
 Klingon,5,Negh'Var Heavy Battle Cruiser,Common,Eng,40,20,15,-25% Maintenance per SciShip,
 Klingon,5,Vor'cha Battle Cruiser Retrofit,Common,Eng,36,24,15,-10% Maintenance per SciShip or TacShip,
+Klingon,5,Vo'quv Carrier,Common,Sci,15,12,48,+8 SCI per Any Ship,
+Klingon,5,Hegh'ta Heavy Bird-of-Prey,Common,Tac,25,25,25,1.25x Critical Rating from All Stats,
+Klingon,5,HoH'SuS Bird-of-Prey,Common,Tac,25,30,20,1.5x Critical Rating from TAC and ENG,
+Klingon,5,Qin Heavy Raptor,Common,Tac,22,38,15,+10 SCI per EngShip,
+Klingon,5,Scourge Destroyer Retrofit,Common,Tac,17,37,21,+10 TAC per SciShip,
+Klingon,5,Somraw Raptor Retrofit,Common,Tac,26,34,15,+10 SCI per SciShip,
 Klingon,5,Marauder Flight Deck Cruiser,Rare,Eng,45,15,30,+8 TAC and SCI per EngShip,
 Klingon,5,Mogh Battle Cruiser,Rare,Eng,32,42,16,+10 SCI per SciShip,
+Klingon,5,Kar'Fi Battle Carrier,Rare,Sci,18,30,42,+15 All Stats when Alone,
+Klingon,5,Nov Dyson Science Destroyer,Rare,Sci,12,28,50,Ignores +/- SCI from Events,
+Klingon,5,Varanus Support Vessel,Rare,Sci,22,14,54,+8 ENG and TAC per SciShip,
+Klingon,5,B'rel Bird-of-Prey Retrofit,Rare,Tac,28,34,28,+10 TAC per SciShip,
+Klingon,5,Guramba Siege Destroyer,Rare,Tac,27,45,18,+8 ENG and SCI per TacShip,
+Klingon,5,Peghqu' Heavy Destroyer,Rare,Tac,26,44,20,+8 SCI per SciShip or EngShip,
+Klingon,5,Korath Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
+Klingon,5,Krenn Temporal Destroyer,Ultra Rare,Tac,23,59,23,+20 TAC and ENG when Alone,
 Klingon,5,Mirror Negh'Var Battle Cruiser,Uncommon,Eng,36,30,17,+3 ENG and TAC per SciShip,
 Klingon,5,Mirror Vor'cha Battle Cruiser Retrofit,Uncommon,Eng,38,19,26,+8 ENG and SCI per TacShip,
+Klingon,5,Mirror Vo'Quv Carrier,Uncommon,Sci,50,16,17,+20 SCI and TAC when Alone,
+Klingon,5,Mirror Ki'tang Bird-of-Prey Retrofit,Uncommon,Tac,27,28,28,+8 TAC per EngShip or SciShip,
+Klingon,5,Mirror Qin Heavy Raptor,Uncommon,Tac,25,42,16,+10 SCI per TacShip,
+Klingon,5,Mirror Somraw Raptor Retrofit,Uncommon,Tac,16,42,25,+10 ENG per EngShip,
 Klingon,5,Bortasqu' Command Cruiser,Very Rare,Eng,47,28,23,+35 SCI when Alone,
 Klingon,5,Bortasqu' Tactical Cruiser,Very Rare,Eng,47,33,18,+35 TAC when Alone,
 Klingon,5,Bortasqu' War Cruiser,Very Rare,Eng,52,28,18,+35 ENG when Alone,
@@ -246,12 +279,6 @@ Klingon,5,Fleet Kamarag Battle Cruiser Retrofit,Very Rare,Eng,40,31,27,+8 SCI an
 Klingon,5,Fleet Mogh Battle Cruiser,Very Rare,Eng,46,34,18,+5 SCI per TacShip,
 Klingon,5,Fleet Negh'Var Battle Cruiser,Very Rare,Eng,54,23,21,-10% Maintenance per SciShip and TacShip,
 Klingon,5,Fleet Vor'cha Battle Cruiser Retrofit,Very Rare,Eng,44,37,17,-5% Maintenance per Any Ship,
-Klingon,5,Vo'quv Carrier,Common,Sci,15,12,48,+8 SCI per Any Ship,
-Klingon,5,Kar'Fi Battle Carrier,Rare,Sci,18,30,42,+15 All Stats when Alone,
-Klingon,5,Nov Dyson Science Destroyer,Rare,Sci,12,28,50,Ignores +/- SCI from Events,
-Klingon,5,Varanus Support Vessel,Rare,Sci,22,14,54,+8 ENG and TAC per SciShip,
-Klingon,5,Korath Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
-Klingon,5,Mirror Vo'Quv Carrier,Uncommon,Sci,50,16,17,+20 SCI and TAC when Alone,
 Klingon,5,Chontay Class Science Destroyer,Very Rare,Sci,12,38,48,+35 TAC when Alone,
 Klingon,5,Fleet Kar'Fi Battle Carrier,Very Rare,Sci,20,30,48,+8 ENG and TAC per TacShip,
 Klingon,5,Fleet Varanus Support Vessel,Very Rare,Sci,25,19,54,+10 TAC per SciShip,
@@ -259,18 +286,6 @@ Klingon,5,Fleet Vo'Quv Carrier,Very Rare,Sci,24,17,57,+8 ENG and TAC per SciShip
 Klingon,5,MoQ Class Science Destroyer,Very Rare,Sci,18,32,48,+35 ENG when Alone,
 Klingon,5,Ta'Sub Class Science Destroyer,Very Rare,Sci,12,32,54,+35 SCI when Alone,
 Klingon,5,Varanus Fleet Support Vessel,Very Rare,Sci,25,19,54,+10 TAC per SciShip,
-Klingon,5,Hegh'ta Heavy Bird-of-Prey,Common,Tac,25,25,25,1.25x Critical Rating from All Stats,
-Klingon,5,HoH'SuS Bird-of-Prey,Common,Tac,25,30,20,1.5x Critical Rating from TAC and ENG,
-Klingon,5,Qin Heavy Raptor,Common,Tac,22,38,15,+10 SCI per EngShip,
-Klingon,5,Scourge Destroyer Retrofit,Common,Tac,17,37,21,+10 TAC per SciShip,
-Klingon,5,Somraw Raptor Retrofit,Common,Tac,26,34,15,+10 SCI per SciShip,
-Klingon,5,B'rel Bird-of-Prey Retrofit,Rare,Tac,28,34,28,+10 TAC per SciShip,
-Klingon,5,Guramba Siege Destroyer,Rare,Tac,27,45,18,+8 ENG and SCI per TacShip,
-Klingon,5,Peghqu' Heavy Destroyer,Rare,Tac,26,44,20,+8 SCI per SciShip or EngShip,
-Klingon,5,Krenn Temporal Destroyer,Ultra Rare,Tac,23,59,23,+20 TAC and ENG when Alone,
-Klingon,5,Mirror Ki'tang Bird-of-Prey Retrofit,Uncommon,Tac,27,28,28,+8 TAC per EngShip or SciShip,
-Klingon,5,Mirror Qin Heavy Raptor,Uncommon,Tac,25,42,16,+10 SCI per TacShip,
-Klingon,5,Mirror Somraw Raptor Retrofit,Uncommon,Tac,16,42,25,+10 ENG per EngShip,
 Klingon,5,Fleet B'rel Bird-of-Prey Retrofit,Very Rare,Tac,31,36,31,1.25x Critical Rating from All Stats,
 Klingon,5,Fleet HoH'SuS Bird-of-Prey,Very Rare,Tac,27,48,23,+8 TAC per SciShip or TacShip,
 Klingon,5,Fleet Norgh Bird-of-Prey Retrofit,Very Rare,Tac,33,34,31,-5% Maintenance per Any Ship,
@@ -283,9 +298,21 @@ Klingon,6,Negh'Tev Heavy Battle Cruiser (T6),Rare,Eng,51,32,25,+8 SCI and TAC pe
 Klingon,6,Orion Blackguard Flight-Deck Assault Cruiser (T6),Rare,Eng,53,38,17,+10 ENG per TacShip,Majority – Minority
 Klingon,6,QeHpu' Advanced Light Battlecruiser (T6),Rare,Eng,55,31,22,2.5x Critical Rating from ENG,Evasion Specialist
 Klingon,6,Qib Intel Battle Cruiser (T6),Rare,Eng,54,37,17,+10 SCI per EngShip,Advanced Firing Solutions
+Klingon,6,Support Battlecruiser [T6],Rare,Eng,62,27,19,-25% Maintenance per EngShip,History Will Remember
+Klingon,6,Naj'sov Research Vessel (T6),Rare,Sci,31,20,57,+8 SCI per EngShip or TacShip,Tachyon Dispersal
+Klingon,6,Duvqu' Heavy Destroyer (T6),Rare,Tac,23,52,33,-25% Maintenance per SciShip,Weapon System Synergy
+Klingon,6,Ferasan Slithus Escort (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
+Klingon,6,Kolasi Siege Destroyer (T6),Rare,Tac,32,53,23,+15 All Stats when Alone,Subsystem Redundancies
+Klingon,6,Kor Bird-of-Prey (T6),Rare,Tac,35,38,35,2.5x Critical Rating from TAC,Withering Barrage
+Klingon,6,Mat'Ha Raptor (T6),Rare,Tac,30,58,20,+10 TAC per EngShip,Overwhelming Force
+Klingon,6,Qa'Tel Flight Deck Raptor (T6),Rare,Tac,29,54,25,+8 SCI per EngShip or TacShip,Coordinated Assault
+Klingon,6,Recon Raptor [T6],Rare,Tac,19,52,37,+10 SCI per TacShip,Jubilant Cadence
 Klingon,6,D7 Temporal Battlecruiser (T6),Ultra Rare,Eng,53,44,29,Ignores +/- ENG from Events,Built To Last
 Klingon,6,D9 Dreadnought Battlecruiser (T6),Ultra Rare,Eng,62,46,18,+15 All Stats when Alone,Catastrophic Overload
 Klingon,6,Durgath Temporal Heavy Dreadnought Battlecruiser (T6),Ultra Rare,Eng,57,42,27,+20 TAC and ENG when Alone,Repair Mode
+Klingon,6,Qul'poH Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
+Klingon,6,Chargh'poH Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
+Klingon,6,Sarcophagus Dreadnought Carrier [T6],Ultra Rare,Tac,41,53,32,Ignore +/- ENG from Events,Honored Dead
 Klingon,6,An'quat Command Battle Cruiser (T6),Very Rare,Eng,77,20,20,+35 ENG when Alone,Improved Brace For Impact
 Klingon,6,Antaak Science Miracle Worker Cruiser (T6),Very Rare,Eng,57,26,34,'+20 TAC and ENG when Alone,Photonic Boarding Party
 Klingon,6,Fleet Mogh Battlecruiser (T6),Very Rare,Eng,55,39,23,+8 ENG per Any Ship,
@@ -293,6 +320,7 @@ Klingon,6,Fleet Negh'var Heavy Battle Cruiser (T6),Very Rare,Eng,55,35,27,+8 TAC
 Klingon,6,Fleet Orion Blackguard Flight-Deck Assault Cruiser (T6),Very Rare,Eng,57,41,19,+8 ENG per TacShip or SciShip,
 Klingon,6,Fleet QeHpu' Advanced Light Battlecruiser (T6),Very Rare,Eng,59,34,24,2x Critical Rating from Events,
 Klingon,6,Fleet Qib Intel Battle Cruiser (T6),Very Rare,Eng,59,39,19,+8 SCI and TAC per EngShip,
+Klingon,6,Fleet Support Battlecruiser [T6],Very Rare,Eng,67,29,21,-10% Maintenance per TacShip or SciShip,
 Klingon,6,Gorkon Science Battlecruiser (T6),Very Rare,Eng,54,36,27,+10 SCI per EngShip,Checkmate
 Klingon,6,Kahless War Battlecruiser (T6),Very Rare,Eng,64,34,19,+10 ENG per TacShip,Adaptive Hull Plating
 Klingon,6,Klinzhai Command Battle Cruiser (T6),Very Rare,Eng,73,20,24,+35 SCI when Alone,Improved Tachyon Beam
@@ -300,25 +328,16 @@ Klingon,6,Klothos Tactical Miracle Worker Cruiser (T6),Very Rare,Eng,57,34,26,'+
 Klingon,6,Martok Tactical Battlecruiser (T6),Very Rare,Eng,48,46,23,+10 TAC per SciShip,Super Charged Weapons
 Klingon,6,Mur'Eq Operations Miracle Worker Cruiser (T6),Very Rare,Eng,65,26,26,'+20 TAC and SCI when Alone,Stay At Your Posts
 Klingon,6,Ty'Gokor Command Battle Cruiser (T6),Very Rare,Eng,73,24,20,+35 TAC when Alone,All Hands On Deck
-Klingon,6,Naj'sov Research Vessel (T6),Rare,Sci,31,20,57,+8 SCI per EngShip or TacShip,Tachyon Dispersal
-Klingon,6,Qul'poH Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
 Klingon,6,Ahgamas Multi-Mission Surveillance Vessel (T6),Very Rare,Sci,28,35,54,Ignores +/- SCI from Events,Charged Particle Reaction
 Klingon,6,Ihgomas Multi-Mission Strategic Vessel (T6),Very Rare,Sci,32,39,46,Ignores +/- ENG from Events,Exotic Particle Shielding
 Klingon,6,Khaimas Multi-Mission Reconnaissance Vessel (T6),Very Rare,Sci,21,44,52,Ignores +/- TAC from Events,Heavy Tachyon Mine
-Klingon,6,Duvqu' Heavy Destroyer (T6),Rare,Tac,23,52,33,-25% Maintenance per SciShip,Weapon System Synergy
-Klingon,6,Ferasan Slithus Escort (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
-Klingon,6,Kolasi Siege Destroyer (T6),Rare,Tac,32,53,23,+15 All Stats when Alone,Subsystem Redundancies
-Klingon,6,Kor Bird-of-Prey (T6),Rare,Tac,35,38,35,2.5x Critical Rating from TAC,Withering Barrage
-Klingon,6,Mat'Ha Raptor (T6),Rare,Tac,30,58,20,+10 TAC per EngShip,Overwhelming Force
-Klingon,6,Qa'Tel Flight Deck Raptor (T6),Rare,Tac,29,54,25,+8 SCI per EngShip or TacShip,Coordinated Assault
-Klingon,6,Chargh'poH Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
-Klingon,6,Sarcophagus Dreadnought Carrier [T6],Ultra Rare,Tac,41,53,32,Ignore +/- ENG from Events,Honored Dead
 Klingon,6,Fleet B'rel Bird-of-Prey (T6),Very Rare,Tac,37,43,37,Ignores +/- TAC from Events,
 Klingon,6,Fleet Duvqu' Heavy Destroyer (T6),Very Rare,Tac,25,57,35,+8 SCI per Any Ship,
 Klingon,6,Fleet Ferasan Slithus Escort (T6),Very Rare,Tac,23,57,37,2.5x Critical Rating from TAC,
 Klingon,6,Fleet Guramba Siege Destroyer (T6),Very Rare,Tac,35,57,25,2x Critical Rating from Events,
 Klingon,6,Fleet Mat'Ha Raptor [T6],Very Rare,Tac,35,60,22,+8 ENG and SCI per TacShip,
 Klingon,6,Fleet Qin Flight Deck Raptor (T6),Very Rare,Tac,31,59,27,+5 SCI and ENG per EngShip or TacShip,
+Klingon,6,Fleet Recon Raptor [T6],Very Rare,Tac,20,58,39,+35 SCI when Alone,
 Klingon,6,Klavek Class Pilot Raptor (T6),Very Rare,Tac,22,66,29,+35 SCI when Alone,Subwarp Sheath
 Klingon,6,Kortar Class Pilot Raptor (T6),Very Rare,Tac,22,70,25,+35 TAC when Alone,Stay On Target
 Klingon,6,Lethean Nemosin Pilot Escort (T6),Very Rare,Tac,26,55,36,-25% Maintenance per SciShip,Improved Gravity Well
@@ -336,34 +355,34 @@ Romulan,2,Dhael Warbird,Rare,Tac,9,16,11,+8 ENG per SciShip or TacShip,
 Romulan,3,Mogai Heavy Warbird,Common,Tac,10,21,14,2.5x Critical Rating from TAC,
 Romulan,3,Valdore Heavy Warbird,Rare,Tac,12,25,17,+8 ENG and SCI per TacShip,
 Romulan,4,D'deridex Warbird Battle Cruiser,Common,Eng,29,16,15,+20 SCI and TAC when Alone,
-Romulan,4,D'ridthau Warbird Battlecruiser,Rare,Eng,35,19,18,2.5x Critical Rating from ENG,
 Romulan,4,Ar'kif Tactical Warbird,Common,Tac,14,32,14,+20 ENG and SCI when Alone,
+Romulan,4,D'ridthau Warbird Battlecruiser,Rare,Eng,35,19,18,2.5x Critical Rating from ENG,
 Romulan,4,Ar'kala Tactical Warbird,Rare,Tac,17,38,17,2.5x Critical Rating from TAC,
 Romulan,5,Ha'apax Advanced Warbird,Common,Eng,40,20,15,+8 SCI and TAC per EngShip,
+Romulan,5,Ha'nom Guardian Warbird,Common,Sci,15,20,40,+8 ENG and TAC per SciShip,
+Romulan,5,Ha'feh Assault Warbird,Common,Tac,18,44,13,+8 ENG and SCI per TacShip,
 Romulan,5,D'deridex Warbird Battle Cruiser Retrofit,Rare,Eng,36,30,24,+10 ENG per EngShip,
 Romulan,5,Haakona Advanced Warbird,Rare,Eng,42,28,20,2.5x Critical Rating from Eng,
-Romulan,5,Mirror Ha'apax Advanced Warbird,Uncommon,Eng,44,17,22,Ignores +/- ENG from Events,
-Romulan,5,Fleet D'deridex Warbird Battlecruiser Retrofit,Very Rare,Eng,36,30,24,+15 All Stats when Alone,
-Romulan,5,Fleet Ha'apax Advanced Warbird,Very Rare,Eng,40,20,15,+8 SCI and TAC per EngShip,
-Romulan,5,Ha'nom Guardian Warbird,Common,Sci,15,20,40,+8 ENG and TAC per SciShip,
 Romulan,5,Aves Dyson Science Destroyer,Rare,Sci,12,28,50,Ignores +/- SCI from Events,
-Romulan,5,R'Mor Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
-Romulan,5,Mirror Ha'nom Guardian Warbird,Uncommon,Sci,22,17,44,Ignores +/- SCI from Events,
-Romulan,5,Caprimul Class Science Destroyer,Very Rare,Sci,12,32,54,+35 SCI when Alone,
-Romulan,5,Fleet Ha'nom Guardian Warbird,Very Rare,Sci,19,26,53,+8 ENG and TAC per SciShip,
-Romulan,5,Harpia Class Science Destroyer,Very Rare,Sci,12,38,48,+35 TAC when Alone,
-Romulan,5,Tyton Class Science Destroyer,Very Rare,Sci,16,32,48,+35 ENG when Alone,
-Romulan,5,Ha'feh Assault Warbird,Common,Tac,18,44,13,+8 ENG and SCI per TacShip,
 Romulan,5,Ar'kif Tactical Carrier Warbird,Rare,Tac,20,50,20,-10% Maintenance per EngShip or SciShip,
 Romulan,5,Daeinos Heavy Destroyer Warbird,Rare,Tac,26,44,20,+8 SCI per SciShip or EngShip,
 Romulan,5,Dhelan Warbird Retrofit,Rare,Tac,23,36,31,+8 SCI and TAC per EngShip,
 Romulan,5,Mogai Heavy Warbird Retrofit,Rare,Tac,32,46,12,+8 ENG and TAC per SciShip,
 Romulan,5,T'varo Light Warbird Retrofit,Rare,Tac,27,36,27,+10 TAC per SciShip,
+Romulan,5,R'Mor Temporal Science Vessel,Ultra Rare,Sci,23,23,59,2.5x Critical Rating from SCI,
 Romulan,5,Talvath Temporal Destroyer,Ultra Rare,Tac,23,59,23,+35 TAC and ENG when Alone,
+Romulan,5,Mirror Ha'apax Advanced Warbird,Uncommon,Eng,44,17,22,Ignores +/- ENG from Events,
+Romulan,5,Mirror Ha'nom Guardian Warbird,Uncommon,Sci,22,17,44,Ignores +/- SCI from Events,
 Romulan,5,Mirror Dhelan Warbird Retrofit,Uncommon,Tac,24,44,15,-25% Maintenance per EngShip,
 Romulan,5,Mirror Ha'feh Assault Warbird,Uncommon,Tac,14,49,20,Ignores +/- TAC from Events,
 Romulan,5,Mirror Mogai Heavy Warbird Retrofit,Uncommon,Tac,13,42,28,-25% Maintenance per TacShip,
 Romulan,5,Mirror T'Varo Light Warbird Retrofit,Uncommon,Tac,15,47,21,-25% Maintenance per SciShip,
+Romulan,5,Fleet D'deridex Warbird Battlecruiser Retrofit,Very Rare,Eng,36,30,24,+15 All Stats when Alone,
+Romulan,5,Fleet Ha'apax Advanced Warbird,Very Rare,Eng,40,20,15,+8 SCI and TAC per EngShip,
+Romulan,5,Caprimul Class Science Destroyer,Very Rare,Sci,12,32,54,+35 SCI when Alone,
+Romulan,5,Fleet Ha'nom Guardian Warbird,Very Rare,Sci,19,26,53,+8 ENG and TAC per SciShip,
+Romulan,5,Harpia Class Science Destroyer,Very Rare,Sci,12,38,48,+35 TAC when Alone,
+Romulan,5,Tyton Class Science Destroyer,Very Rare,Sci,16,32,48,+35 ENG when Alone,
 Romulan,5,Falchion Dreadnought Warbird,Very Rare,Tac,28,48,22,+35 ENG when Alone,
 Romulan,5,Fleet Ar'Kif Tactical Carrier Warbird Retrofit,Very Rare,Tac,22,54,22,1.5x Critical Rating from ENG and SCI,
 Romulan,5,Fleet Daeinos Warbird Destroyer,Very Rare,Tac,26,44,20,+20 SCI and TAC when Alone,
@@ -378,8 +397,18 @@ Romulan,6,D'Khellra Warbird Battlecruiser (T6),Rare,Eng,52,28,28,+8 SCI and TAC 
 Romulan,6,Deleth Advanced Light Warbird Battlecruiser (T6),Rare,Eng,47,36,25,2.5x Critical Rating from ENG,Evasion Specialist
 Romulan,6,Kara Advanced Warbird (T6),Rare,Eng,58,28,22,+15 All Stats when Alone,Subsystem Redundancies
 Romulan,6,Suliban Silik Flight-Deck Assault Cruiser (T6),Rare,Eng,53,38,17,+10 ENG per TacShip,Majority – Minority
+Romulan,6,Laeosa Research Vessel (T6),Rare,Sci,37,22,55,+8 SCI per EngShip or TacShip,Tachyon Dispersal
+Romulan,6,Dinaes Warbird Destroyer (T6),Rare,Tac,31,52,25,-25% Maintenance per SciShip,Weapon System Synergy
+Romulan,6,Faeht Intel Warbird (T6),Rare,Tac,19,62,27,+10 ENG per TacShip,Tactical Retreat
+Romulan,6,Hathos Warbird (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
+Romulan,6,Jhu'ael Tactical Carrier Warbird (T6),Rare,Tac,25,58,25,+8 SCI per EngShip or TacShip,Coordinated Assault
+Romulan,6,Malem Light Warbird (T6),Rare,Tac,31,46,31,-25% Maintenance per TacShip,Withering Barrage
+Romulan,6,Morrigu Heavy Warbird (T6),Rare,Tac,38,55,15,2.5x Critical Rating from SCI,Emergency Weapon Cycle
 Romulan,6,Thrai Dreadnought Warbird (T6),Ultra Rare,Eng,57,49,20,+15 All Stats when Alone,Layered Shielding
 Romulan,6,Valkis Temporal Heavy Dreadnought Warbird (T6),Ultra Rare,Eng,51,46,29,+20 TAC and ENG when Alone,Repair Mode
+Romulan,6,Sui'Mor Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
+Romulan,6,T'liss Temporal Warbird (T6),Ultra Rare,Tac,35,52,39,Ignores +/- ENG from Events,Built To Last
+Romulan,6,Tal'aura Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
 Romulan,6,Baratan Command Battlecruiser Warbird (T6),Very Rare,Eng,77,20,20,+35 ENG when Alone,Improved Brace For Impact
 Romulan,6,Deihu Command Battlecruiser Warbird (T6),Very Rare,Eng,73,20,24,+35 SCI when Alone,Improved Tachyon Beam
 Romulan,6,Fleet Aelahl Light Warbird Battlecruiser (T6),Very Rare,Eng,55,41,21,+8 ENG per Any Ship,
@@ -392,19 +421,9 @@ Romulan,6,Nijil Operations Miracle Worker Warbird (T6),Very Rare,Eng,65,26,26,'+
 Romulan,6,Tebok Tactical Miracle Worker Warbird (T6),Very Rare,Eng,57,34,26,'+20 SCI and ENG when Alone,Redirecting Arrays
 Romulan,6,Varel Science Miracle Worker Warbird (T6),Very Rare,Eng,57,26,34,'+20 TAC and ENG when Alone,Photonic Boarding Party
 Romulan,6,Vastam Command Battlecruiser Warbird (T6),Very Rare,Eng,73,24,20,+35 TAC when Alone,All Hands On Deck
-Romulan,6,Laeosa Research Vessel (T6),Rare,Sci,37,22,55,+8 SCI per EngShip or TacShip,Tachyon Dispersal
-Romulan,6,Sui'Mor Temporal Science Vessel (T6),Ultra Rare,Sci,29,29,68,Ignores +/- SCI from Events,Out of Time
 Romulan,6,Galas Surveillance Explorer Warbird (T6),Very Rare,Sci,28,35,54,Ignores +/- SCI from Events,Charged Particle Reaction
 Romulan,6,Surhuelh Reconnaissance Explorer Warbird (T6),Very Rare,Sci,21,44,52,Ignores +/- TAC from Events,Heavy Tachyon Mine
 Romulan,6,Taenen Strategic Explorer Warbird (T6),Very Rare,Sci,32,39,46,Ignores +/- ENG from Events,Exotic Particle Shielding
-Romulan,6,Dinaes Warbird Destroyer (T6),Rare,Tac,31,52,25,-25% Maintenance per SciShip,Weapon System Synergy
-Romulan,6,Faeht Intel Warbird (T6),Rare,Tac,19,62,27,+10 ENG per TacShip,Tactical Retreat
-Romulan,6,Hathos Warbird (T6),Rare,Tac,23,49,36,+10 TAC per EngShip,Hit And Run
-Romulan,6,Jhu'ael Tactical Carrier Warbird (T6),Rare,Tac,25,58,25,+8 SCI per EngShip or TacShip,Coordinated Assault
-Romulan,6,Malem Light Warbird (T6),Rare,Tac,31,46,31,-25% Maintenance per TacShip,Withering Barrage
-Romulan,6,Morrigu Heavy Warbird (T6),Rare,Tac,38,55,15,2.5x Critical Rating from SCI,Emergency Weapon Cycle
-Romulan,6,T'liss Temporal Warbird (T6),Ultra Rare,Tac,35,52,39,Ignores +/- ENG from Events,Built To Last
-Romulan,6,Tal'aura Temporal Destroyer (T6),Ultra Rare,Tac,29,68,29,+8 TAC per EngShip or SciShip,1.21 Terrawatts
 Romulan,6,Dewan Dynnasia Pilot Escort (T6),Very Rare,Tac,36,55,26,-25% Maintenance per EngShip,Painful Memories
 Romulan,6,Dewan Ikkabar Pilot Escort (T6),Very Rare,Tac,26,55,36,-25% Maintenance per SciShip,Improved Gravity Well
 Romulan,6,Dewan Vandros Pilot Escort (T6),Very Rare,Tac,26,65,26,-25% Maintenance per TacShip,Promise Of Ferocity
@@ -431,24 +450,21 @@ Universal,5,Obelisk Carrier,Common,Eng,37,15,23,2x Critical Rating from Events,
 Universal,5,Advanced Obelisk Carrier,Ultra Rare,Eng,53,21,31,2.5x Critical Rating from ENG,
 Universal,5,Cardassian Galor Class Cruiser,Ultra Rare,Eng,59,28,18,1.5x Critical Rating from SCI and TAC,
 Universal,5,Elachi Monbosh Battleship,Ultra Rare,Eng,52,39,14,+10 SCI per TacShip,
+Universal,5,Ferengi D'Kora Marauder,Ultra Rare,Eng,51,31,23,+8 SCI and TAC per EngShip,
 Universal,5,Hirogen Apex Heavy Battlecruiser,Ultra Rare,Eng,57,32,16,+10 SCI per TacShip,
-Universal,5,Jem'Hadar Dreadnought Carrier,Ultra Rare,Tac,44,45,16,+8 ENG per SciShip or TacShip,
 Universal,5,Risian Luxury Cruiser,Ultra Rare,Eng,64,25,16,+8 ENG per SciShip or TacShip,
 Universal,5,Tholian Recluse Carrier,Ultra Rare,Eng,44,21,40,+10 TAC per Tacship,
 Universal,5,Undine Dromias Bio-Cruiser,Ultra Rare,Eng,51,29,25,2.5x Critical Rating from TAC,
 Universal,5,Voth Bastion Flight-Deck Cruiser,Ultra Rare,Eng,54,24,27,2.5x Critical Rating from ENG,
 Universal,5,Voth Bulwark Dreadnought Cruiser,Ultra Rare,Eng,63,19,23,-5% Maintenance per Any Ship,
-Universal,5,APU Cruiser,Uncommon,Eng,47,21,15,+10 SCI per EngShip,
-Universal,5,Malon Battlecruiser,Uncommon,Eng,45,18,20,+10 TAC per SciShip,
-Universal,5,Ferengi D'Kora Marauder,Ultra Rare,Eng,51,31,23,+8 SCI and TAC per EngShip,
 Universal,5,Tholian Orb Weaver,Ultra Rare,Sci,29,22,54,+8 ENG and TAC per SciShip,
 Universal,5,Voth Palisade Science Vessel,Ultra Rare,Sci,30,15,60,+10 TAC per EngShip,
-Universal,5,Lukari N'kaam Scout Ship,Uncommon,Sci,16,31,36,2.5x Critical Rating from SCI,
 Universal,5,Breen Chel Grett Warship,Ultra Rare,Tac,25,52,28,+8 ENG and SCI per TacShip,
 Universal,5,Breen Plesh Brek Heavy Raider,Ultra Rare,Tac,18,63,24,+8 TAC per EngShip or SciShip,
 Universal,5,Elachi S'Golth Escort,Ultra Rare,Tac,18,51,36,2.5x Critical Rating from TAC,
 Universal,5,Hirogen Hunter Heavy Escort,Ultra Rare,Tac,35,51,19,+5 SCI per EngShip,
 Universal,5,Jem'Hadar Attack Ship,Ultra Rare,Tac,29,68,8,-25% Maintenance per SciShip,
+Universal,5,Jem'Hadar Dreadnought Carrier,Ultra Rare,Tac,44,45,16,+8 ENG per SciShip or TacShip,
 Universal,5,Jem'Hadar Heavy Escort Carrier,Ultra Rare,Tac,38,51,16,+8 TAC per EngShip or SciShip,
 Universal,5,Risian corvette,Ultra Rare,Tac,33,51,21,+10 TAC per SciShip,
 Universal,5,Tal Shiar Adapted Battle Cruiser,Ultra Rare,Tac,46,28,31,+15 All Stats when Alone,
@@ -456,6 +472,9 @@ Universal,5,Tal Shiar Adapted Destroyer,Ultra Rare,Tac,24,51,30,+20 ENG and SCI 
 Universal,5,Undine Nicor Bio-Warship,Ultra Rare,Tac,20,56,29,2.5x Critical Rating from SCI,
 Universal,5,Xindi-Aquatic Narcine Dreadnought Carrier,Ultra Rare,Tac,27,51,27,1.5x Critical Rating from ENG and SCI,
 Universal,5,Xindi-Reptillian Contortrix Escort,Ultra Rare,Tac,29,58,18,+10 TAC per SciShip,
+Universal,5,APU Cruiser,Uncommon,Eng,47,21,15,+10 SCI per EngShip,
+Universal,5,Malon Battlecruiser,Uncommon,Eng,45,18,20,+10 TAC per SciShip,
+Universal,5,Lukari N'kaam Scout Ship,Uncommon,Sci,16,31,36,2.5x Critical Rating from SCI,
 Universal,5,Kazon Heavy Raider,Uncommon,Tac,14,50,19,+10 ENG per TacShip,
 Universal,5,Nihydron Destroyer,Uncommon,Tac,21,47,15,2.5x Critical Rating from TAC,
 Universal,5,Sphere Builder Arehbes Destroyer,Uncommon,Tac,9,43,31,Ignores +/- TAC from Events,
@@ -465,6 +484,13 @@ Universal,6,I.K.S. Hegh,Epic,Eng,62,42,31,+20 SCI per Any Ship,
 Universal,6,I.S.S. Stadi,Epic,Eng,70,35,30,+20 TAC per Any Ship,
 Universal,6,Quark's Triumph,Epic,Eng,49,45,41,-20% Maintenance per ANY Ship (Not Small Craft),
 Universal,6,V.S.S. Tanius,Epic,Eng,53,39,43,+50 ALL when Alone,
+Universal,6,C.U.V. Tain,Epic,Sci,66,29,40,2.5x Critical Rating from Events,
+Universal,6,Odo's Flagship,Epic,Sci,69,40,26,4x Critical Rating from ENG,
+Universal,6,U.S.S. Pastak,Epic,Sci,31,31,73,Ignores +/- SCI from Events and +8 SCI per Any Ship,
+Universal,6,U.S.S. Rhode Island,Epic,Sci,30,27,78,3x Critical Rating from All Stats,
+Universal,6,U.S.S. Sally Ride,Epic,Sci,28,28,79,+20 SCI per ANY Ship (Not Small Craft),
+Universal,6,R.R.W. Zdenia,Epic,Tac,23,61,51,+15 ENG and TAC per Any Ship,
+Universal,6,U.S.S. Appalachia,Epic,Tac,38,75,22,Ignores +/- TAC from Events and +8 TAC per Any Ship,
 Universal,6,Benthan Assault Cruiser (T6),Ultra Rare,Eng,63,40,23,+8 ENG and TAC per SciShip,Load Viral Torpedo
 Universal,6,Breen Rezreth Dreadnought Cruiser (T6),Ultra Rare,Eng,62,33,31,Ignores +/- TAC from Events,Enhanced Power Condensers
 Universal,6,Cardassian Keldon Cruiser [T6],Ultra Rare,Eng,71,29,26,1.5x Critical Rating from TAC and ENG,Insidious Tactics
@@ -472,20 +498,20 @@ Universal,6,Elachi Sheshar Command Dreadnought Cruiser (T6),Ultra Rare,Eng,60,38
 Universal,6,Elachi Sheshar Intel Dreadnought Cruiser (T6),Ultra Rare,Eng,57,37,32,Ignores +/- ENG from Events,Torpedo Barage
 Universal,6,Ferengi Nagus Marauder [T6],Ultra Rare,Eng,57,42,27,Ignores +/- ENG from Events,Streak Breaker
 Universal,6,Herald Quas Flight Deck Cruiser (T6),Ultra Rare,Eng,64,29,33,+35 TAC when Alone,Synergistic Restoration
+Universal,6,Hur'q Vedcrid Hive Dreadnought Carrier [T6],Ultra Rare,Eng,63,39,24,+5 TAC per Any Ship (Not Small Craft),Repulsive
 Universal,6,Kobali Samsar Cruiser (T6),Ultra Rare,Eng,74,24,28,-10% Maintenance per TacShip or SciShip,Emergency Response
 Universal,6,Na'kuhl Acheros Battlecruiser (T6),Ultra Rare,Eng,63,36,27,Ignores +/- ENG from Events,Temporal Ally
 Universal,6,Son'a Intel Battlecruiser (T6),Ultra Rare,Eng,59,42,25,+8 ENG per SciShip or TacShip,Subspatial Warheads
+Universal,6,Tal Shiar Adapted Battlecruiser (T6),Ultra Rare,Eng,54,32,40,+10 SCI per TacShip,Assimilated Power Conduits
 Universal,6,Tholian Tarantula Dreadnought Cruiser (T6),Ultra Rare,Eng,53,43,30,+10 ENG per Tacship,Energy Web
 Universal,6,Tzenkethi Rhas'bej Battlecruiser (T6),Ultra Rare,Eng,57,37,32,+35 SCI when Alone,Turtle
 Universal,6,Vaadwaur Astika Heavy Battle Cruiser (T6),Ultra Rare,Eng,67,41,18,+10 TAC per TacShip,Supremacy
 Universal,6,Vorgon Ryn'kodan Carrier (T6),Ultra Rare,Eng,74,26,26,+8 SCI and TAC per EngShip,Restorative Support
+Universal,6,Vorgon Ytijara Dreadnought Cruiser [T6],Ultra Rare,Eng,52,30,44,+10 SCI per EngShip,S.I.F. Burst
 Universal,6,Xindi-Primate Ateleth Dreadnought Cruiser (T6),Ultra Rare,Eng,68,32,26,+10 ENG per TacShip,Superweapon Ingenuity
 Universal,6,Zahl Heavy Cruiser (T6),Ultra Rare,Eng,70,36,20,-5% Maintenance per Any Ship,Invincible
-Universal,6,Tal Shiar Adapted Battlecruiser (T6),Ultra Rare,Eng,54,32,40,+10 SCI per TacShip,Assimilated Power Conduits
-Universal,6,Temporal Dreadnought Cruiser [T6],Very Rare,Eng,51,41,25,Ignores +/- ENG from Events,Exotic Modulation
-Universal,6,U.S.S. Pastak,Epic,Sci,31,31,73,Ignores +/- SCI from Events and +8 SCI per Any Ship,
-Universal,6,U.S.S. Rhode Island,Epic,Sci,30,27,78,3x Critical Rating from All Stats,
 Universal,6,Breen Sarr Theln Carrier (T6),Ultra Rare,Sci,32,44,50,-10% Maintenance per TacShip or EngShip,Reactive Repair Nanites
+Universal,6,Hur'q Assembly Multi-Mission Science Vessel [T6],Ultra Rare,Sci,25,45,56,+8 SCI per Engship or Tacship,Hivebearer
 Universal,6,Kelvin Timeline T'laru Intel Carrier Warbird (T6),Ultra Rare,Sci,36,45,45,+8 SCI per EngShip or TacShip,Highly Specialized
 Universal,6,Krenim Annorax Science Dreadnought (T6),Ultra Rare,Sci,18,47,61,Ignores +/- SCI from Events,Time To Kill
 Universal,6,Krenim Science Vessel (T6),Ultra Rare,Sci,26,34,66,+8 SCI per EngShip or TacShip,Improved Feedback Pulse
@@ -497,9 +523,6 @@ Universal,6,Paradox Temporal Dreadnought (T6),Ultra Rare,Sci,34,32,60,+10 SCI pe
 Universal,6,Son'a Collector Science Dreadnought (T6),Ultra Rare,Sci,32,23,71,+8 TAC and ENG per TacShip,Collect And Consume
 Universal,6,Son'a Command Science Vessel (T6),Ultra Rare,Sci,38,24,64,+8 SCI per EngShip or TacShip,Kick Them While They're Down
 Universal,6,Sphere Builder Edoulg Science Vessel [T6],Ultra Rare,Sci,24,44,58,2.5x Critical Rating from SCI,Delphic Phasing
-Universal,6,Temporal Multi-Mission Science Vessel [T6],Very Rare,Sci,32,29,56,Ignores +/- SCI from Events,Particle Feedback Loop
-Universal,6,R.R.W. Zdenia,Epic,Tac,23,61,51,+15 ENG and TAC per Any Ship,
-Universal,6,U.S.S. Appalachia,Epic,Tac,38,75,22,Ignores +/- TAC from Events and +8 TAC per Any Ship,
 Universal,6,Amarie-class Smuggler's Heavy Escort (T6),Ultra Rare,Tac,20,62,44,Ignores +/- ENG from Events,Reverberation
 Universal,6,Bajoran Interceptor [T6],Ultra Rare,Tac,26,59,41,+10 TAC per TacShip,Harrying Maneuvers
 Universal,6,Breen Chel Boalg Warship (T6),Ultra Rare,Tac,40,53,33,+10 TAC per EngShip,Cryonic Siphon
@@ -508,40 +531,29 @@ Universal,6,Ferengi Nandi Warship (T6),Ultra Rare,Tac,22,60,44,-10% Maintenance 
 Universal,6,Hazari Destroyer (T6),Ultra Rare,Tac,30,66,30,+8 ENG and SCI per EngShip,Partners In Arms
 Universal,6,Herald Baltim Heavy Raider (T6),Ultra Rare,Tac,37,57,32,+15 ENG and SCI when Alone,Waylay
 Universal,6,Herald Vonph Dreadnought Carrier (T6),Ultra Rare,Tac,26,68,32,+35 ENG when Alone,Peak Efficiency
+Universal,6,Hur'q Ravager Escort Carrier [T6],Ultra Rare,Tac,27,72,27,+8 TAC per Engship or Sciship,Nullifier Warheads
 Universal,6,Husnock Warship (T6),Ultra Rare,Tac,44,60,22,+20 TAC and ENG when Alone,Directed Energy Flux
+Universal,6,Jem'Hadar Dreadnought Carrier (T6),Ultra Rare,Tac,49,55,22,+35 TAC when Alone,Dominion Coordination
 Universal,6,Jem'Hadar Heavy Escort Carrier [T6],Ultra Rare,Tac,42,60,24,Ignores +/- TAC from Events,Tactical Analysis
+Universal,6,Jem'Hadar Light Battlecruiser [T6],Ultra Rare,Tac,57,45,24,+8 TAC and SCI per TacShip,Obedience is Victory
 Universal,6,Jem'Hadar Recon Ship (T6),Ultra Rare,Tac,32,78,16,2.5x Critical Rating from TAC,Go For The Kill
 Universal,6,Jem'Hadar Strike Ship (T6),Ultra Rare,Tac,35,75,16,Ignores +/- TAC from Events,Go For The Kill
-Universal,6,Jem'Hadar Dreadnought Carrier (T6),Ultra Rare,Tac,49,55,22,+35 TAC when Alone,Dominion Coordination
 Universal,6,Kelvin Timeline D4x Pilot Raider (T6),Ultra Rare,Tac,34,60,32,+10 TAC per EngShip,Standoff
 Universal,6,Krenim Imperium Warship (T6),Ultra Rare,Tac,26,66,34,+10 TAC per SciShip,Potentiality
+Universal,6,Marquis Raider [T6],Ultra Rare,Tac,35,56,35,+20 ENG and SCI when Alone,Badlands Tactics
 Universal,6,Miradorn Theta Class Heavy Raider (T6),Ultra Rare,Tac,24,65,37,+20 TAC and SCI when alone,Advantageous Positioning
 Universal,6,Na'kuhl Tadaari Raider (T6),Ultra Rare,Tac,29,60,37,Ignores +/- SCI from Events,Spoils Of The Victor
 Universal,6,Sphere Builder Denuos Dreadnought Carrier (T6),Ultra Rare,Tac,35,53,38,2.5x Critical Rating from TAC,Delphic Shockwave
+Universal,6,Tal Shiar Adapted Destroyer (T6),Ultra Rare,Tac,32,54,41,+10 SCI per EngShip,Synergistic Tactical Systems
 Universal,6,Tzenkethi Shuk-din Escort (T6),Ultra Rare,Tac,26,55,45,+10 TAC per SciShip,Symmetry
 Universal,6,Vaadwaur Manasa Assault Escort (T6),Ultra Rare,Tac,42,64,20,+10 ENG per EngShip,Frontal Assault
 Universal,6,Vorgon Xyfius Heavy Escort (T6),Ultra Rare,Tac,41,63,22,+15 ENG per TacShip,Harasser Mines
 Universal,6,Xindi-Aquatic Briostrys Dreadnought Carrier (T6),Ultra Rare,Tac,34,58,34,2.5x Critical Rating from SCI,Kemocite Overload
 Universal,6,Xindi-Insectoid Olaen Heavy Escort Carrier (T6),Ultra Rare,Tac,31,62,33,+10 TAC per EngShip,Council Of Thought
 Universal,6,Xindi-Reptilian Sistruus Escort (T6),Ultra Rare,Tac,35,69,22,+10 TAC per EngShip,Self-replicating Hull
-Universal,6,Tal Shiar Adapted Destroyer (T6),Ultra Rare,Tac,32,54,41,+10 SCI per EngShip,Synergistic Tactical Systems
-Universal,6,Temporal Raider [T6],Very Rare,Tac,32,55,30,Ignores +/- TAC from Events,Regroup
-Universal,6,Cardassian Intel Science Dreadnought [T6],Very Rare,Sci,23,34,60,Ignore +/- SCI from Events,Photonic Diversion
 Universal,6,Cardassian Intel Flight-Deck Cruiser [T6],Very Rare,Eng,66,29,22,Ignore +/- ENG from Events,Calm Before The Storm
+Universal,6,Temporal Dreadnought Cruiser [T6],Very Rare,Eng,51,41,25,Ignores +/- ENG from Events,Exotic Modulation
+Universal,6,Cardassian Intel Science Dreadnought [T6],Very Rare,Sci,23,34,60,Ignore +/- SCI from Events,Photonic Diversion
+Universal,6,Temporal Multi-Mission Science Vessel [T6],Very Rare,Sci,32,29,56,Ignores +/- SCI from Events,Particle Feedback Loop
 Universal,6,Cardassian Intel Escort [T6],Very Rare,Tac,16,56,45,Ignore +/- TAC from Events,Preparedness
-JemHadar,6,Jem'Hadar Vanguard Carrier [T6],Very Rare,Sci,20,34,63,2.5x Critical Rating from SCI,Dampen Energy Signatures
-JemHadar,6,Jem'Hadar Vanguard Dreadnought Cruiser [T6],Very Rare,Eng,60,34,23,2.5x Critical Rating from ENG,Team Synergy
-JemHadar,6,Jem'Hadar Vanguard Warship [T6],Very Rare,Tac,38,61,18,2.5x Critical Rating from TAC,Tricks of the Trade
-JemHadar,6,Jem'Hadar Vanguard Heavy Raider [T6],Very Rare,Tac,30,47,40,Ignore +/- TAC from Events,Press the Advantage
-JemHadar,5,Jem'Hadar Escort [T5-U],Common,Tac,23,42,10,1.5x Critical Rating from All Stats,
-JemHadar,0,Jem'Hadar Fighter,Common,Smc,2,3,1,+10 ALL Stats per ANY Ship (Not Small Craft),
-Universal,6,C.U.V. Tain,Epic,Sci,66,29,40,2.5x Critical Rating from Events,
-Universal,6,Jem'Hadar Light Battlecruiser [T6],Ultra Rare,Tac,57,45,24,+8 TAC and SCI per TacShip,Obedience is Victory
-Universal,6,Marquis Raider [T6],Ultra Rare,Tac,35,56,35,+20 ENG and SCI when Alone,Badlands Tactics
-Universal,6,Odo's Flagship,Epic,Sci,69,40,26,4x Critical Rating from ENG,
-Universal,6,U.S.S. Sally Ride,Epic,Sci,28,28,79,+20 SCI per ANY Ship (Not Small Craft),
-Universal,6,Vorgon Ytijara Dreadnought Cruiser [T6],Ultra Rare,Eng,52,30,44,+10 SCI per EngShip,S.I.F. Burst
-Federation,6,Recon Destroyer [T6],Rare,Tac,19,52,37,+10 SCI per TacShip,Jubilant Cadence
-Federation,6,Fleet Recon Destroyer [T6],Very Rare,Tac,20,58,39,+35 SCI when Alone,
-Klingon,6,Recon Raptor [T6],Rare,Tac,19,52,37,+10 SCI per TacShip,Jubilant Cadence
-Klingon,6,Fleet Recon Raptor [T6],Very Rare,Tac,20,58,39,+35 SCI when Alone,
+Universal,6,Temporal Raider [T6],Very Rare,Tac,32,55,30,Ignores +/- TAC from Events,Regroup
