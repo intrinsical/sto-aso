@@ -10,6 +10,10 @@ Specifically, information is currently required for the following ships:
 
  * Crossfield-class Science Vanguard [T6]
  * Walker-class Light Exploration Cruiser [T6]
+ * Vaadwaur Juggernaut [T6]
+ * Fek'Ihri S'torr Warship [T6]
+ * Mirror Escort Carrier [T6]
+ * Styx Terran Dreadnought Cruiser [T6]
 
 **<span style="font-size:larger;">[Click here to submit admiralty ship information](https://github.com/intrinsical/sto-aso/issues/new?template=submit-admiralty-ship-information.md&labels=ship+info&title=New+admiralty+ship)</span>**
 
