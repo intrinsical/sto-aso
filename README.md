@@ -8,15 +8,8 @@ Star Trek Online is constantly adding new ships to the game, and I don't have ac
 
 Specifically, information is currently required for the following ships:
 
- * Narendra Support Cruiser (T6)
- * Ambassador Fleet Support Cruiser (T6)
- * Vor'ral Support Battlecruiser (T6)
- * Fleet Support Battlecruiser (T6)
- * Hur'q Assembly Multi-Mission Science Vessel (T6)
- * Hur'q Ravager Escort Carrier (T6)
- * Europa Heavy Battlecruiser (T6)
- * Fleet Heavy Battlecruiser (T6)
- * Walker Prototype Light Exploration Cruiser
+ * Crossfield-class Science Vanguard [T6]
+ * Walker-class Light Exploration Cruiser [T6]
 
 **<span style="font-size:larger;">[Click here to submit admiralty ship information](https://github.com/intrinsical/sto-aso/issues/new?template=submit-admiralty-ship-information.md&labels=ship+info&title=New+admiralty+ship)</span>**
 
@@ -33,8 +26,6 @@ TODOs:
  * While the program is running, have a background thread move ships that are ready to be deployed out of the maintenance list.
  * Update UI to display maintenance times. Some of the classes that need to be updated includes [Ship.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/beans/Ship.java), [ShipCellRenderer.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/ui/renderers/ShipCellRenderer.java) and [AdmiralPanel.class](https://github.com/intrinsical/sto-aso/blob/master/src/com/kor/admiralty/ui/AdmiralPanel.java)
 
-## Help : Icons for every ship
+## Help : Automated update of data files
 
-Currently ASO only include icons for commonly used ships (small crafts, ships from Tiers 1 to 4, Epic ships, summer event ships, winter event ships, special event ships, free promotional ships). This is to prevent users from having to download a bloated program filled with ship icons they do not need. 
-
-Perhaps we can host ship icons somewhere (maybe github?). ASO can download and cache icons only for ships that the user owns. 
+With the release of v1.0.30, ASO now has the ability to download ship icons from this github repository. It would be useful to extend this functionality to .csv files. This would potentially allow me to push new ship data without having to release a new version of ASO. 
