@@ -44,19 +44,20 @@ import com.kor.admiralty.beans.Event;
 import com.kor.admiralty.beans.Ship;
 import com.kor.admiralty.ui.workers.SwingWorkerExecutor;
 
+import static com.kor.admiralty.Globals.FILENAME_ADMIRALS;
+import static com.kor.admiralty.Globals.FILENAME_ASSIGNMENTS;
+import static com.kor.admiralty.Globals.FILENAME_EVENTS;
+import static com.kor.admiralty.Globals.FILENAME_ICONCACHE;
+import static com.kor.admiralty.Globals.FILENAME_NEWCACHE;
+import static com.kor.admiralty.Globals.FILENAME_RENAMED;
+import static com.kor.admiralty.Globals.FILENAME_SHIPCACHE;
+import static com.kor.admiralty.Globals.FILENAME_TRAITS;
+import static com.kor.admiralty.ui.resources.Strings.ExceptionDialog.*;
+
 public class Datastore {
 
 	private static final Logger logger = Logger.getGlobal();
-	private static final String NAME_ADMIRALS = "admirals.xml";
-	private static final String NAME_SHIPCACHE = "ships.csv";
-	private static final String NAME_EVENTS = "events.csv";
-	private static final String NAME_ASSIGNMENTS = "assignments.csv";
-	private static final String NAME_RENAMED = "renamed.csv";
-	private static final String NAME_TRAITS = "traits.csv";
-	private static final String NAME_ICONCACHE = "icons.zip";
-	private static final String NAME_NEWCACHE = "newicons.zip";
-	private static final File FOLDER_CURRENT = new File(".");
-	
+	private static SortedMap<String, File> FILES = new TreeMap<String, File>();
 	private static SortedMap<String, Ship> SHIPS = new TreeMap<String, Ship>();
 	private static SortedMap<String, Event> EVENTS = new TreeMap<String, Event>();
 	private static SortedMap<String, AdmAssignment> ASSIGNMENTS = new TreeMap<String, AdmAssignment>();
@@ -69,6 +70,7 @@ public class Datastore {
 	private static transient JAXBContext admiralsContext;
 	private static transient Marshaller admiralsMarshaller;
 	private static transient Unmarshaller admiralsUnmarshaller;
+	private static final File FOLDER_CURRENT = file(".");
 
 	static {
 		init();
@@ -120,8 +122,13 @@ public class Datastore {
 		return ICONS;
 	}
 	
+	public static boolean isDataFilesStale() {
+		File file = file(Globals.FILENAME_HASHES);
+		return file.exists() ? isStale(file) : true;
+	}
+
 	public static boolean isIconCacheStale() {
-		File file = new File(NAME_ICONCACHE);
+		File file = file(FILENAME_ICONCACHE);
 		if (!file.exists()) return true;
 		
 		if (isStale(file)) {
@@ -142,7 +149,7 @@ public class Datastore {
 	}
 	
 	private static void loadShipDatabase() {
-		File file = new File(NAME_SHIPCACHE);
+		File file = file(FILENAME_SHIPCACHE);
 		
 		/*/ Unused code, currently does nothing.
 		if (!file.exists()) {
@@ -157,60 +164,75 @@ public class Datastore {
 		/*/
 
 		SHIPS.clear();
-		Reader reader = loadFile(file);
-		ShipDatabaseParser.loadShipDatabase(reader, SHIPS);
+		try (Reader reader = loadFile(file)) {
+			ShipDatabaseParser.loadShipDatabase(reader, SHIPS);
+		} catch (IOException cause) {
+			logger.log(Level.WARNING, String.format(ErrorReading, file.getName()), cause);
+		}
 		
 		/*/ Code needs further refinement. 
 		// Need to consider the implication of silently downloading the same file every week.
 		// Is there a better way? Check against some sort of hash before downloading?
 		if (isStale(file)) {
 			// Update ships.csv for the next time
-			SwingWorkerExecutor.getInstance().downloadShipList(file);
+			SwingWorkerExecutor.downloadShipList(file);
 		}
 		/*/
 	}
 	
 	private static void loadEvents() {
-		File file = new File(NAME_EVENTS);
+		File file = file(FILENAME_EVENTS);
 		EVENTS.clear();
-		Reader reader = loadFile(file);
-		EventsParser.loadEvents(reader, EVENTS);
+		try (Reader reader = loadFile(file)) {
+			EventsParser.loadEvents(reader, EVENTS);
+		} catch (IOException cause) {
+			logger.log(Level.WARNING, String.format(ErrorReading, file.getName()), cause);
+		}
 	}
 	
 	private static void loadAssignments() {
-		File file = new File(NAME_ASSIGNMENTS);
+		File file = file(FILENAME_ASSIGNMENTS);
 		ASSIGNMENTS.clear();
-		Reader reader = loadFile(file);
-		AssignmentsParser.loadAssignments(reader, ASSIGNMENTS);
+		try (Reader reader = loadFile(file)) {
+			AssignmentsParser.loadAssignments(reader, ASSIGNMENTS);
+		} catch (IOException cause) {
+			logger.log(Level.WARNING, String.format(ErrorReading, file.getName()), cause);
+		}
 	}
 	
 	private static void loadRenamedShips() {
-		File file = new File(NAME_RENAMED);
+		File file = file(FILENAME_RENAMED);
 		RENAMED.clear();
-		Reader reader = loadFile(file);
-		RenamedShipParser.loadRenamedShips(reader, RENAMED);
+		try (Reader reader = loadFile(file)) {
+			RenamedShipParser.loadRenamedShips(reader, RENAMED);
+		} catch (IOException cause) {
+			logger.log(Level.WARNING, String.format(ErrorReading, file.getName()), cause);
+		}
 	}
 	
 	private static void loadTraits() {
-		File file = new File(NAME_TRAITS);
+		File file = file(FILENAME_TRAITS);
 		TRAITS.clear();
-		Reader reader = loadFile(file);
-		TraitsParser.loadTraits(reader, TRAITS);
+		try (Reader reader = loadFile(file)) {
+			TraitsParser.loadTraits(reader, TRAITS);
+		} catch (IOException cause) {
+			logger.log(Level.WARNING, String.format(ErrorReading, file.getName()), cause);
+		}
 	}
 	
 	private static void loadCachedIcons() {
-		File file = new File(NAME_ICONCACHE);
+		File file = file(FILENAME_ICONCACHE);
 		ICONS.clear();
 		IconLoader.loadCachedIcons(file, ICONS);
 	}
 	
 	private static void saveCachedIcons() {
-		File oldFile = new File(NAME_ICONCACHE);
+		File oldFile = file(FILENAME_ICONCACHE);
 		if (oldFile.exists()) {
 			oldFile.delete();
 		}
 		
-		File newFile = new File(NAME_NEWCACHE);
+		File newFile = file(FILENAME_NEWCACHE);
 		IconLoader.saveCachedIcons(newFile, ICONS);
 		
 		newFile.renameTo(oldFile);
@@ -225,13 +247,16 @@ public class Datastore {
 	public static Admirals getAdmirals() {
 		if (ADMIRALS == null) {
 			try {
-				ADMIRALS = loadAdmirals(new File(NAME_ADMIRALS));
+				ADMIRALS = loadAdmirals(file(FILENAME_ADMIRALS));
 			} catch (JAXBException cause) {
-				logger.log(Level.WARNING, "Unable to read admirals.xml", cause);
+				logger.log(Level.WARNING, String.format(ErrorReading, FILENAME_ADMIRALS), cause);
 			}
 			for (Admiral admiral : ADMIRALS.getAdmirals()) {
 				admiral.validateShips();
 				admiral.activateShips();
+			}
+			if (isDataFilesStale()) {
+				SwingWorkerExecutor.updateDataFiles();
 			}
 			if (isIconCacheStale()) {
 				// Download icons for ships owned by the user
@@ -239,7 +264,7 @@ public class Datastore {
 				// the update is done in the background. 
 				// As a result, the UI may not always be up to date for the current run.
 				for (Ship ship : getAllShips().values()) {
-					if (ship.isOwned()) SwingWorkerExecutor.getInstance().downloadIcon(ship); 
+					if (ship.isOwned()) SwingWorkerExecutor.downloadIcon(ship); 
 				}
 			}
 		}
@@ -248,9 +273,9 @@ public class Datastore {
 	
 	public static void setAdmirals(Admirals admirals) {
 		try {
-			saveAdmirals(new File(NAME_ADMIRALS), admirals);
+			saveAdmirals(file(FILENAME_ADMIRALS), admirals);
 		} catch (JAXBException cause) {
-			logger.log(Level.WARNING, "Unable to save admirals.xml", cause);
+			logger.log(Level.WARNING, String.format(ErrorWriting, FILENAME_ADMIRALS), cause);
 		}
 	}
 
@@ -317,8 +342,15 @@ public class Datastore {
 			admiralsMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 			admiralsUnmarshaller = admiralsContext.createUnmarshaller();
 		} catch (Throwable cause) {
-			logger.log(Level.WARNING, "Error initializing JAXB", cause);
+			logger.log(Level.WARNING, ErrorInitJAXB, cause);
 		}
+	}
+	
+	public static File file(String filename) {
+		if (!FILES.containsKey(filename)) {
+			FILES.put(filename, new File(filename));
+		}
+		return FILES.get(filename);
 	}
 
 	private static Reader loadFile(File file) {
@@ -347,5 +379,5 @@ public class Datastore {
 			output.write(buffer, 0, n);
 		}
 	}
-
+	
 }

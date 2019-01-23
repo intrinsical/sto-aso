@@ -30,7 +30,7 @@ public class SwingWorkerExecutor {
 	
 	private static final int MAX_WORKER_THREAD = 3;
 	private static final SwingWorkerExecutor EXECUTOR = new SwingWorkerExecutor();
-
+	
 	private ExecutorService workerThreadPool = Executors.newFixedThreadPool(MAX_WORKER_THREAD);
 
 	private SwingWorkerExecutor() {
@@ -48,20 +48,64 @@ public class SwingWorkerExecutor {
 	 *            - The SwingWorker thread to execute.
 	 * 
 	 */
-	public void execute(SwingWorker<?, ?> worker) {
+	public <T, V> void execute(SwingWorker<T, V> worker) {
 		workerThreadPool.submit(worker);
 	}
 	
-	public void downloadShipList(File file) {
-		execute(new ShipDataDownloader(file));
+	public static <T, V> void exec(SwingWorker<T, V> worker) {
+		getInstance().execute(worker);
 	}
 	
-	public void downloadIcon(Ship ship) {
+	/*/
+	public static void downloadHashes() {
+		exec(new PropertiesDownloader(URL_HASHES));
+	}
+	//*/
+	
+	/*/
+	public static void downloadShips(File file) {
+		exec(new FileDownloader(file, URL_SHIPS));
+	}
+	//*/
+	
+	/*/
+	public static void downloadTraits(File file) {
+		exec(new FileDownloader(file, URL_TRAITS));
+	}
+	//*/
+	
+	/*/
+	public static void downloadAssignments(File file) {
+		exec(new FileDownloader(file, URL_ASSIGNMENTS));
+	}
+	//*/
+	
+	/*/
+	public static void downloadEvents(File file) {
+		exec(new FileDownloader(file, URL_EVENTS));
+	}
+	//*/
+	
+	/*/
+	public static void downloadRenamedShips(File file) {
+		exec(new FileDownloader(file, URL_RENAMED));
+	}
+	//*/
+	
+	public static void downloadFile(File file, String filename) {
+		exec(new FileDownloader(file, filename));
+	}
+	
+	public static void downloadIcon(Ship ship) {
 		// Don't download if we already have a ship icon either in the .jar or icons.zip file
 		String iconName = ship.getIconName();
 		if (ActualShipIconFactory.hasBundledIcon(iconName)) return;
 		if (Datastore.getCachedIcons().containsKey(iconName)) return;
-		execute(new ShipIconLoader(ship.getName().toLowerCase(), iconName));
+		exec(new ShipIconLoader(ship.getName().toLowerCase(), iconName));
+	}
+	
+	public static void updateDataFiles() {
+		exec(new UpdateDataFiles());
 	}
 	
 }

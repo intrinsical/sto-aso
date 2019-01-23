@@ -28,18 +28,18 @@ import java.util.logging.Logger;
 
 import javax.swing.SwingWorker;
 
-import com.kor.admiralty.Globals;
 import com.kor.admiralty.io.Datastore;
 
-public class ShipDataDownloader extends SwingWorker<Boolean, Boolean> {
+public class FileDownloader extends SwingWorker<Boolean, Boolean> {
 
-	protected static final String URL_SHIPDATA = String.format(Globals.URL_UPDATE, "data/ships.csv");
 	protected static final Logger LOGGER = Logger.getGlobal();
 	
 	protected File file;
+	protected String remoteName;
 
-	public ShipDataDownloader(File file) {
+	public FileDownloader(File file, String remoteName) {
 		this.file = file;
+		this.remoteName = remoteName;
 	}
 
 	@Override
@@ -47,22 +47,22 @@ public class ShipDataDownloader extends SwingWorker<Boolean, Boolean> {
 		BufferedReader reader = null;
 		FileWriter writer = null;
 		try {
-			URL url = new URL(URL_SHIPDATA);
+			URL url = new URL(remoteName);
 			reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			writer = new FileWriter(file);
 			Datastore.copy(reader, writer);
 		} catch (MalformedURLException cause) {
-			LOGGER.log(Level.WARNING, "Malformed URL: " + URL_SHIPDATA, cause);
+			LOGGER.log(Level.WARNING, "Malformed URL: " + remoteName, cause);
 			return false;
 		} catch (IOException cause) {
-			LOGGER.log(Level.WARNING, "Error while downloading " + URL_SHIPDATA, cause);
+			LOGGER.log(Level.WARNING, "Error while downloading " + remoteName, cause);
 			return false;
 		} finally {
 			if (reader != null) {
 				try {
 					reader.close();
 				} catch (IOException cause) {
-					LOGGER.log(Level.WARNING, "Error while downloading " + URL_SHIPDATA, cause);
+					LOGGER.log(Level.WARNING, "Error while downloading " + remoteName, cause);
 				}
 			}
 			if (writer != null) {
@@ -70,7 +70,7 @@ public class ShipDataDownloader extends SwingWorker<Boolean, Boolean> {
 					writer.flush();
 					writer.close();
 				} catch (IOException cause) {
-					LOGGER.log(Level.WARNING, "Error while downloading " + URL_SHIPDATA, cause);
+					LOGGER.log(Level.WARNING, "Error while downloading " + remoteName, cause);
 				}
 			}
 		}

@@ -235,6 +235,11 @@ public class Strings {
 		public static final String LabelOkay = "OK";
 		public static final String LabelViewError = "View Error";
 		public static final String LabelHideError = "Hide Error";
+		public static final String ErrorReading = "Error reading from %s"; 
+		public static final String ErrorWriting = "Error writing to %s";
+		public static final String ErrorNoMD5 = "MD5 algorithm is not available";
+		public static final String ErrorMalformedUrl = "Invalid url %s";
+		public static final String ErrorInitJAXB = "Error initializing JAXB";
 	}
 	
 }

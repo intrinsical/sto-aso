@@ -32,7 +32,16 @@ public class Globals {
 	public static final int MAX_ASSIGNMENTS = 3;
 	public static final int SOLVER_DEPTH = 10;
 	public static final String URL_UPDATE = "https://github.com/intrinsical/sto-aso/raw/master/%s";
-	public static final long UPDATE_INTERVAL = 7L * 24L * 60L * 60L * 1000L; // Check for updates every 7 days 
+	public static final long UPDATE_INTERVAL = 7L * 24L * 60L * 60L * 1000L; // Check for updates every 7 days
+	public static final String FILENAME_ADMIRALS = "admirals.xml";
+	public static final String FILENAME_SHIPCACHE = "ships.csv";
+	public static final String FILENAME_EVENTS = "events.csv";
+	public static final String FILENAME_ASSIGNMENTS = "assignments.csv";
+	public static final String FILENAME_RENAMED = "renamed.csv";
+	public static final String FILENAME_TRAITS = "traits.csv";
+	public static final String FILENAME_ICONCACHE = "icons.zip";
+	public static final String FILENAME_NEWCACHE = "newicons.zip";
+	public static final String FILENAME_HASHES = "hashes.md5";
 	public static boolean DEBUG;
 
 	static {
