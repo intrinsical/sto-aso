@@ -12,6 +12,14 @@ Specifically, information is currently required for the following ships:
  * Mirror Engle Escort Carrier [T6]
  * Styx Terran Dreadnought Cruiser [T6]
  * T'Pau Vulcan Scout Ship [T6]
+ * Shran Light Pilot Escort [T6]
+ * Gagarin Miracle Worker Battlecruiser [T6]
+ * Fleet Shran Light Pilot Escort [T6]
+ * Fleet Gagarin Miracle Worker Battlecruiser [T6]
+ * M'Chla Pilot Bird of Prey [T6]
+ * Qugh Miracle Worker Battlecruiser [T6]
+ * Fleet M'Chla Pilot Bird of Prey [T6]
+ * Fleet Qugh Miracle Worker Battlecruiser [T6]
 
 **<span style="font-size:larger;">[Click here to submit admiralty ship information](https://github.com/intrinsical/sto-aso/issues/new?template=submit-admiralty-ship-information.md&labels=ship+info&title=New+admiralty+ship)</span>**
 
